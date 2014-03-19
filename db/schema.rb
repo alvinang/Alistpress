@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140319185218) do
+ActiveRecord::Schema.define(version: 20140319220229) do
+
+  create_table "templates", force: true do |t|
+    t.string   "title",      null: false
+    t.text     "content",    null: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "templates", ["title"], name: "index_templates_on_title"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
