@@ -16,10 +16,15 @@
     <div class="collapse navbar-collapse" id="nav-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="/">Home</a></li>
-        <li><%= link_to 'About' %></li>
         <li><%= link_to 'Features' %></li>
         <li><%= link_to 'Tour' %></li>
-        <li><%= link_to 'Contact' %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Account Settings' %></li>
+          <li><%= link_to 'Log out', destroy_user_session_url, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Login', new_user_session_url %></li>
+          <li><%= link_to 'Sign Up', new_user_registration_url %></li>
+        <% end %>
       </ul>
     </div>
   </div>
