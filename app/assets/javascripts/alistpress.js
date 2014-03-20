@@ -4,15 +4,13 @@ window.Alistpress = {
   Views: {},
   Routers: {},
   initialize: function() {
-    var $rootEl = $('container');   
+    var $rootEl = $('#content');   
      
-    new Alistpress.Routers.Atemplates({
+    new Alistpress.Routers.AppRouters({
       $rootEl: $rootEl  
     });
     
-    alert('yo');    
-    Backbone.history.start();
-        
+    Backbone.history.start();        
   }
 };
 
@@ -21,11 +19,7 @@ $(document).ready(function(){
   
   Alistpress.atemplates.fetch({
     success: function() {
-      alert('works?');
-      Alistpress.initialize();      
-    },
-    error: function() {
-      alert("did not initialize!");
+      Alistpress.initialize();    
     }
   });
 });
