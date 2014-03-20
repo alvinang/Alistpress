@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320003645) do
+ActiveRecord::Schema.define(version: 20140320162111) do
 
   create_table "atemplates", force: true do |t|
     t.string   "title",      null: false
@@ -23,10 +23,21 @@ ActiveRecord::Schema.define(version: 20140320003645) do
 
   add_index "atemplates", ["title"], name: "index_atemplates_on_title"
 
+  create_table "authorizations", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.string   "token"
+    t.string   "secret"
+    t.string   "name"
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "username",               default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -37,6 +48,7 @@ ActiveRecord::Schema.define(version: 20140320003645) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

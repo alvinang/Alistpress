@@ -17,8 +17,8 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   },
   
   _swapView: function(view) {
-    this._swapView && this._swapView.remove();
-    this._swapView = view;
+    this._currentView && this._currentView.remove();
+    this._currentView = view;
     this.$rootEl.html(view.render().$el);
   }
   

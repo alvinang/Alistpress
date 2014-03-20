@@ -15,6 +15,9 @@ gem 'ejs'
 # auth/security
 gem 'devise', '~>3.2.4'
 gem 'figaro'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'uuidtools'
 
 # 3rd parth apps
 gem 'newrelic_rpm'
@@ -25,6 +28,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'annotate'
   gem 'quiet_assets'
+  gem 'letter_opener'
 end
 
 group :production do
