@@ -14,12 +14,4 @@ window.Alistpress = {
   }
 };
 
-$(document).ready(function(){
-  Alistpress.atemplates = new Alistpress.Collections.Atemplates();
-  
-  Alistpress.atemplates.fetch({
-    success: function() {
-      Alistpress.initialize();    
-    }
-  });
-});
+

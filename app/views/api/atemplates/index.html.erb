@@ -1,4 +1,16 @@
 <div id="content" class='row'>
   <h1>Dashboard</h1>
 
-</p>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+  Alistpress.atemplates = new Alistpress.Collections.Atemplates();
+  
+  Alistpress.atemplates.fetch({
+    success: function() {
+      Alistpress.initialize();    
+    }
+  });
+});
+</script>
