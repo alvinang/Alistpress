@@ -1,7 +1,7 @@
 Alistpress::Application.routes.draw do  
     
   authenticated :user do
-    root to: 'api/templates#index', as: :authenticated_root
+    root to: 'api/atemplates#index', as: :authenticated_root
   end  
   
   root to: 'home#index'
@@ -17,7 +17,7 @@ Alistpress::Application.routes.draw do
   end              
   
   namespace :api, defaults: { format: :json } do 
-    resources :templates, only: [:create, :destroy, :index, :show, :update]
+    resources :atemplates, only: [:create, :destroy, :index, :show, :update]
   end
 
 end

@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140319220229) do
+ActiveRecord::Schema.define(version: 20140320003645) do
 
-  create_table "templates", force: true do |t|
+  create_table "atemplates", force: true do |t|
     t.string   "title",      null: false
     t.text     "content",    null: false
     t.integer  "user_id"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140319220229) do
     t.datetime "updated_at"
   end
 
-  add_index "templates", ["title"], name: "index_templates_on_title"
+  add_index "atemplates", ["title"], name: "index_atemplates_on_title"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
