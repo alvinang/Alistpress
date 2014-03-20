@@ -1,4 +1,5 @@
 window.Alistpress.Views.AtemplatesIndex = Backbone.View.extend({
+  className: 'row',
   
   template: JST['atemplates/index'],
 

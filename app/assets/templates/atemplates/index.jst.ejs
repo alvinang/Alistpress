@@ -1,5 +1,19 @@
 <p>Dude, I'm the dashboard :)</p>
 
 <h4>Now, try to add a new template</h4>
+<hr>
+
+<% atemplates.forEach(function(template){ %>
+<div class="panel panel-success col-xs-3 col-xs-offset-1">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= template.escape('title') %></h3>
+  </div>
+  <div class="panel-body">
+   <%= template.escape('content') %>
+  </div>
+</div>
+<% }) %>
+
+<hr>
 
 <a href="#/atemplates/new" class='create-template'>Create new template</a>
