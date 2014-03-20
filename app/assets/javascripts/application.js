@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap/alert
+//= require jquery.serializeJSON.min
 //= require underscore
 //= require backbone
 //= require alistpress

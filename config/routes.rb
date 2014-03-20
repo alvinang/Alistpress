@@ -18,7 +18,7 @@ Alistpress::Application.routes.draw do
   end              
   
   namespace :api, defaults: { format: :json } do 
-    resources :atemplates, only: [:create, :destroy, :index, :show, :update]
+    resources :atemplates, only: [:create, :destroy, :edit, :index, :show, :update]
   end
 
 end

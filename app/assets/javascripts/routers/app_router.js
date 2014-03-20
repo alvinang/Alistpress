@@ -5,15 +5,24 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   },
   
   routes: {
-    "": "index"
+    "": "index",
+    "atemplates/new": "newAtemplate"
   },
   
   index: function() {
-    var indexAtemplate = new Alistpress.Views.Atemplates({
+    var indexAtemplate = new Alistpress.Views.AtemplatesIndex({
       collection: Alistpress.atemplates
     });
     
     this._swapView(indexAtemplate);
+  },
+  
+  newAtemplate: function() {
+    var newAtemplate = new Alistpress.Views.AtemplateNew({
+      model: new Alistpress.Models.Atemplate()
+    });    
+    
+    this._swapView(newAtemplate);
   },
   
   _swapView: function(view) {
