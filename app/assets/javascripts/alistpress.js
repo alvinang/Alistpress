@@ -4,20 +4,28 @@ window.Alistpress = {
   Views: {},
   Routers: {},
   initialize: function() {
-    var $rootEl = $('content');    
-    new Alistpress.Routers.Templates({
+    var $rootEl = $('container');   
+     
+    new Alistpress.Routers.Atemplates({
       $rootEl: $rootEl  
     });
     
-    alert('yo');
+    alert('yo');    
+    Backbone.history.start();
+        
   }
 };
 
 $(document).ready(function(){
-  Alistpress.templates = new Alistpress.Collections.Templates();
-  Alistpress.templates.fetch({
+  Alistpress.atemplates = new Alistpress.Collections.Atemplates();
+  
+  Alistpress.atemplates.fetch({
     success: function() {
+      alert('works?');
       Alistpress.initialize();      
+    },
+    error: function() {
+      alert("did not initialize!");
     }
   });
 });

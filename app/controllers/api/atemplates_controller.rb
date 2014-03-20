@@ -10,12 +10,11 @@ class Api::AtemplatesController < ApplicationController
   end
   
   def index
-    # @templates = Template.where(user_id: current_user.id)
-    render :index
+    @atemplates = Atemplate.where(user_id: current_user.id)
   end
   
   def show
-    @template = Template.find_by(user_id: current_user.id)
+    @atemplate = Atemplate.find_by(user_id: current_user.id)
   end
   
   def update
