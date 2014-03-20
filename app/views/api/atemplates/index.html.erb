@@ -6,7 +6,7 @@
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
   Alistpress.atemplates = new Alistpress.Collections.Atemplates();
-  
+  Alistpress.current_user_id = <%= current_user.id %>
   Alistpress.atemplates.fetch({
     success: function() {
       Alistpress.initialize();    
