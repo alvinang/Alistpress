@@ -5,6 +5,7 @@ class Api::ThemesController < ApplicationController
     @theme = Theme.new(theme_params)
     
     if @theme.save
+      sent(@theme) if @theme.sent
       render json: @theme
     else
       render json: @theme.errors.full_messages, status: 422
@@ -33,6 +34,10 @@ class Api::ThemesController < ApplicationController
     else
       render json: @theme.errors.full_messages, status: 422
     end
+  end
+  
+  def sent(theme)
+    Usermailer.email(theme).deliver
   end
   
   private
