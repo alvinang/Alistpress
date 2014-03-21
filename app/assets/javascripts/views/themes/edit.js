@@ -1,7 +1,6 @@
-window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
-  tagName: 'row',
+window.Alistpress.Views.ThemeEdit = Backbone.View.extend({
   
-  template: JST['atemplates/show'],
+  template: JST['themes/edit'],
   
   events: {
     "submit form": "saveTheme",
@@ -10,7 +9,7 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
   
   render: function() {
     var renderedContent = this.template({
-      atemplate: this.model
+      theme: this.model
     });
     
     this.$el.html(renderedContent);
@@ -32,7 +31,8 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
   
   _newTheme: function(params) {    
     params.user_id = Alistpress.current_user_id;
-    params.template_id = this.model.id;
+    params.template_id = this.model.template_id;
+    params.id = this.model.id;
     
     var template = new Alistpress.Models.Theme(params);        
     template.save({}, {
@@ -45,5 +45,4 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
       }
     });
   }
-  
 });

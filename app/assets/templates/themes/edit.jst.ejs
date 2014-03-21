@@ -1,0 +1,60 @@
+<form class="jumbotron col-xs-10 col-xs-offset-1">
+<!-- <div class="jumbotron col-xs-10 col-xs-offset-1 create-new-template"> -->
+  
+  <p class='lead' style="font-size:16px;font-weight:200;line-height:1.4;">
+    <label for="r_email">To:</label> 
+    <input name="theme[recipient_email]" type="email" placeholder="Recipient Email" id="r_email" value="<%= theme.escape('recipient_email') %>">
+  </p>
+  
+  <p style="font-size:16px;font-weight:200;line-height:1.4;">
+    <label for="t_email">From:</label>
+    <input name="theme[sender_email]" type="email" placeholder="Recipient Email" value="<%= theme.escape('sender_email') %>" id="t_email">
+  </p>
+  
+  <p class="theme-title-width">
+    <input id="wysihtml5-title" type="text" value="<%= theme.escape('title') %>" name="theme[title]">    
+  </p>
+
+  <p>
+    <textarea id="wysihtml5" class="col-xs-12" style="height: 200px;" placeholder="Enter Content" name="theme[content]">
+      <%= theme.escape('content') %>
+    </textarea>
+  </p>
+  
+  <p>
+    <button class="save-theme btn btn-primary pull-right" style="border-radius:0;" type="submit">Update</button>
+  </p>  
+<!-- </div> -->
+</form>
+
+<button class="send-theme btn btn-success pull-right" style="border-radius:0;" type="submit">Send</button>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+  
+  $('#wysihtml5-title').each(function(i, elem) {
+    $(elem).wysihtml5({
+    	"font-styles": false,
+    	"emphasis": false,
+    	"lists": false, 
+    	"html": false,
+    	"link": false, 
+    	"image": false, 
+    	"color": false 
+    });
+  });
+
+  $('#wysihtml5').each(function(i, elem) {
+    $(elem).wysihtml5({
+    	"font-styles": true,
+    	"emphasis": true,
+    	"lists": true, 
+    	"html": false,
+    	"link": true, 
+    	"image": true, 
+    	"color": true 
+    }); 
+  });
+  
+});
+</script>

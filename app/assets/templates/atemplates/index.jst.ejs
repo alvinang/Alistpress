@@ -42,17 +42,25 @@
         <th>Recipient</th>
         <th>Title</th>
         <th>Date Saved</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
   <% Alistpress.themes.forEach(function(theme){ %>
-    <%= console.log(theme.escape('sent')) %>         
     
     <% if (theme.escape('sent') === 'false') { %>   
     <tr>
       <td><%= theme.escape('recipient_email') %></td>
       <td><%= theme.escape('title') %></td>
       <td><%= theme.escape('updated_at') %></td>
+      <td>
+        <button class="index-edit-theme">
+          <a href="#/themes/<%= theme.escape('id') %>/edit">
+            Edit
+          </a>
+        </button>
+        <button class="index-delete-theme" data-id="<%= theme.escape('id') %>" method="delete">Delete</button>
+      </td>
     </tr>
     <% } %>  
   <% }); %>
@@ -69,7 +77,7 @@
       <tr>
         <th>Recipient</th>
         <th>Title</th>
-        <th>Date Saved</th>
+        <th>Date Sent</th>
       </tr>
     </thead>
     <tbody>
