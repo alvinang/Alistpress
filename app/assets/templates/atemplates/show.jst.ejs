@@ -1,11 +1,18 @@
-<div class="jumbotron col-xs-10 col-xs-offset-1">
-  <h2><input id="wysihtml5-title" type="text" value="<%= atemplate.escape('title') %>"></h2>
+<form class="jumbotron col-xs-10 col-xs-offset-1">
+<!-- <div class="jumbotron col-xs-10 col-xs-offset-1 create-new-template"> -->
+  
+  <h2>
+    <input id="wysihtml5-title" type="text" value="<%= atemplate.escape('title') %>" name="atemplate[title]">
+    <button class="submit-template btn btn-primary pull-right" style="border-radius:0;" type="submit">Create</button>
+  </h2>
 
-  <p><textarea id="wysihtml5" style="width: 810px; height: 200px;" placeholder="Enter Content">
+  <p>
+    <textarea id="wysihtml5" class="col-xs-12" style="height: 200px;" placeholder="Enter Content" name="atemplate[content]">
       <%= atemplate.escape('content') %>
     </textarea>
   </p>
-</div>
+<!-- </div> -->
+</form>
 
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){

@@ -7,15 +7,21 @@
 <div class="panel panel-success col-xs-3 col-xs-offset-1">
   <div class="panel-heading">
     <h3 class="panel-title">
-      <a href="#/atemplates/<%= template.escape('user_id') %>"><%= template.escape('title') %></a>
+      <a href="#/atemplates/<%= template.escape('id') %>"><%= template.escape('title') %></a>
     </h3>
   </div>
   <div class="panel-body">
    <%= template.escape('content') %>
   </div>
+  <button class='delete-template btn btn-xs btn-danger pull-right'    
+        style='margin-bottom:10px;' 
+        data-template-id="<%= template.escape('id') %>">
+        Delete Template
+  </button>
 </div>
 <% }) %>
 
 <hr>
-
-<a href="#/atemplates/new" class='create-template'>Create new template</a>
+<div class="col-xs-10 col-xs-offset-1">
+  <a href="#/atemplates/new" class='create-template'>Create new template</a>  
+</div>

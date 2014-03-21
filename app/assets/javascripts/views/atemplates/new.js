@@ -19,11 +19,11 @@ window.Alistpress.Views.AtemplateNew = Backbone.View.extend({
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON().atemplate;
     params.user_id = Alistpress.current_user_id;
-    var newAtemplate = new Alistpress.Models.Atemplate(params);
+    var template = new Alistpress.Models.Atemplate(params);
     
-    newAtemplate.save({}, {
+    template.save({}, {
       success: function() {
-        Alistpress.atemplates.add(newAtemplate);
+        Alistpress.atemplates.add(template);
         Backbone.history.navigate("", { trigger: true });
       }, 
       error: function() {
