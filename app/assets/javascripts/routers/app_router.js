@@ -6,9 +6,9 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   
   routes: {
     "": "index",
-    "atemplates/new": "newAtemplate",
-    "atemplates/:id": "showAtemplate",
-    "atemplates/:id/edit": "editAtemplate"
+    "atemplates/new"      : "newAtemplate",
+    "atemplates/:id"      : "showAtemplate",
+    "atemplates/:id/edit" : "editAtemplate"  
   },
   
   index: function() {

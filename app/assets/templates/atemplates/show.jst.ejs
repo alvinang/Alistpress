@@ -1,16 +1,29 @@
 <form class="jumbotron col-xs-10 col-xs-offset-1">
 <!-- <div class="jumbotron col-xs-10 col-xs-offset-1 create-new-template"> -->
   
-  <h2>
-    <input id="wysihtml5-title" type="text" value="<%= atemplate.escape('title') %>" name="atemplate[title]">
-    <button class="submit-template btn btn-primary pull-right" style="border-radius:0;" type="submit">Create</button>
-  </h2>
+  <p class='lead' style="font-size:16px;font-weight:200;line-height:1.4;">
+    <label for="r_email">To:</label> 
+    <input name="theme[recipient_email]" type="email" placeholder="Recipient Email" id="r_email">
+  </p>
+  
+  <p style="font-size:16px;font-weight:200;line-height:1.4;">
+    <label for="t_email">From:</label>
+    <input name="theme[sender_email]" type="email" placeholder="Recipient Email" value="<%= Alistpress.current_user_email %>" id="t_email">
+  </p>
+  
+  <p class="theme-title-width">
+    <input id="wysihtml5-title" type="text" value="<%= atemplate.escape('title') %>" name="theme[title]">    
+  </p>
 
   <p>
-    <textarea id="wysihtml5" class="col-xs-12" style="height: 200px;" placeholder="Enter Content" name="atemplate[content]">
+    <textarea id="wysihtml5" class="col-xs-12" style="height: 200px;" placeholder="Enter Content" name="theme[content]">
       <%= atemplate.escape('content') %>
     </textarea>
   </p>
+  
+  <p>
+    <button class="submit-template btn btn-primary pull-right" style="border-radius:0;" type="submit">Save</button>
+  </p>  
 <!-- </div> -->
 </form>
 

@@ -26,7 +26,7 @@ window.Alistpress.Views.AtemplateEdit = Backbone.View.extend({
     var template = new Alistpress.Models.Atemplate(params);  
     template.save({}, {
       success: function(){
-        Alistpress.atemplates.set(template);        
+        Alistpress.atemplates.add(template, {merge: true});        
         Backbone.history.navigate("", { trigger: true });        
       },
       error: function(){

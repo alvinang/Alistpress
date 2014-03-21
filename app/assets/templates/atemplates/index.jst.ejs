@@ -9,20 +9,20 @@
 <div class="my-templates col-xs-12">
   <h3>My Templates</h3>
   <br>
-  <% atemplates.forEach(function(template){ %>
+  <% atemplates.forEach(function(atemplate){ %>
   <div class="panel panel-success col-xs-3 col-xs-offset-1">
     <div class="panel-heading">
       <h3 class="panel-title">
-        <a href="#/atemplates/<%= template.escape('id') %>"><%= template.escape('title') %></a>
+        <a href="#/atemplates/<%= atemplate.escape('id') %>"><%= atemplate.escape('title') %></a>
       </h3>
     </div>
     <div class="panel-body">
-     <%= template.escape('description') %>
+     <%= atemplate.escape('description') %>
     </div>
     <button class='edit-template btn btn-xs btn-default pull-right'    
           style='margin-bottom:10px;' 
-          data-template-id="<%= template.escape('id') %>">
-          <a href="#/atemplates/<%= template.escape('id') %>/edit">Edit</a>
+          data-template-id="<%= atemplate.escape('id') %>">
+          <a href="#/atemplates/<%= atemplate.escape('id') %>/edit">Edit</a>
     </button>    
   </div>
   <% }) %>
@@ -33,11 +33,56 @@
 </div>
 
 <hr>
+            
 <div class="saved-templates col-xs-12">
   <h3>Saved Templates</h3><br>
-  
-  
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Recipient</th>
+        <th>Title</th>
+        <th>Date Saved</th>
+      </tr>
+    </thead>
+    <tbody>
+  <% Alistpress.themes.forEach(function(theme){ %>
+    <%= console.log(theme.escape('sent')) %>         
+    
+    <% if (theme.escape('sent') === 'false') { %>   
+    <tr>
+      <td><%= theme.escape('recipient_email') %></td>
+      <td><%= theme.escape('title') %></td>
+      <td><%= theme.escape('updated_at') %></td>
+    </tr>
+    <% } %>  
+  <% }); %>
+    </tbody>
+  </table>  
 </div>
 
+<hr>
 
+<div class="saved-templates col-xs-12">
+  <h3>Sent Templates</h3><br>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Recipient</th>
+        <th>Title</th>
+        <th>Date Saved</th>
+      </tr>
+    </thead>
+    <tbody>
+  <% Alistpress.themes.forEach(function(theme){ %>
+    <% if (theme.escape('sent') === 'true') { %>            
+    <tr>
+      <td><%= theme.escape('recipient_email') %></td>
+      <td><%= theme.escape('title') %></td>
+      <td><%= theme.escape('updated_at') %></td>
+    </tr>
+    <% } %> 
+  <% }); %> 
+    </tbody>
+  </table>  
+</div>
 
