@@ -12,13 +12,14 @@ Alistpress::Application.routes.draw do
               controllers: { omniauth_callbacks: 'omniauth_callbacks' }
               
   devise_scope :user do
-    match '/login', via: :get, to: 'devise/sessions#new', as: :new_user_session
-    match '/login', via: :post,  to: 'devise/sessions#create', as: :user_session
-    match '/logout', via: :delete, to: 'devise/sessions#destroy', as: :destroy_user_session  
+    match '/login'  , via: :get   , to: 'devise/sessions#new'     , as: :new_user_session
+    match '/login'  , via: :post  , to: 'devise/sessions#create'  , as: :user_session
+    match '/logout' , via: :delete, to: 'devise/sessions#destroy' , as: :destroy_user_session  
   end              
   
   namespace :api, defaults: { format: :json } do 
-    resources :atemplates, only: [:create, :destroy, :edit, :index, :show, :update]
+    resources :atemplates , only: [:create, :destroy, :edit, :index, :show, :update]
+    resources :themes     , only: [:create, :destroy, :edit, :index, :show, :update]    
   end
 
 end

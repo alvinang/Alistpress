@@ -43,7 +43,7 @@ class Api::AtemplatesController < ApplicationController
   private
   
   def template_params
-    params.require(:atemplate).permit(:title, :content, :user_id)
+    params.require(:atemplate).permit(:title, :content, :description, :category, :user_id)
   end
   
 end

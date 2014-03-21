@@ -7,8 +7,12 @@
 $(document).ready(function(){
   Alistpress.atemplates = new Alistpress.Collections.Atemplates();
   Alistpress.current_user_id = <%= current_user.id %>
+  
   Alistpress.atemplates.fetch({
     success: function() {
+      Alistpress.themes = new Alistpress.Collections.Themes();
+      Alistpress.themes.fetch();
+      
       Alistpress.initialize();    
     }
   });

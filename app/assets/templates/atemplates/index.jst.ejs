@@ -1,27 +1,43 @@
-<p>Dude, I'm the dashboard :)</p>
+<h1>Welcome to your dashboard, haha..</h1>
 
-<h4>Now, try to add a new template</h4>
-<hr>
-
-<% atemplates.forEach(function(template){ %>
-<div class="panel panel-success col-xs-3 col-xs-offset-1">
-  <div class="panel-heading">
-    <h3 class="panel-title">
-      <a href="#/atemplates/<%= template.escape('id') %>"><%= template.escape('title') %></a>
-    </h3>
-  </div>
-  <div class="panel-body">
-   <%= template.escape('content') %>
-  </div>
-  <button class='delete-template btn btn-xs btn-danger pull-right'    
-        style='margin-bottom:10px;' 
-        data-template-id="<%= template.escape('id') %>">
-        Delete Template
-  </button>
-</div>
-<% }) %>
+<p>
+  Dude, I'm the dashboard! :)<br>
+  PS: "dude" is gender neutral...
+</p>
 
 <hr>
-<div class="col-xs-10 col-xs-offset-1">
-  <a href="#/atemplates/new" class='create-template'>Create new template</a>  
+<div class="my-templates col-xs-12">
+  <h3>My Templates</h3>
+  <br>
+  <% atemplates.forEach(function(template){ %>
+  <div class="panel panel-success col-xs-3 col-xs-offset-1">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <a href="#/atemplates/<%= template.escape('id') %>"><%= template.escape('title') %></a>
+      </h3>
+    </div>
+    <div class="panel-body">
+     <%= template.escape('description') %>
+    </div>
+    <button class='edit-template btn btn-xs btn-default pull-right'    
+          style='margin-bottom:10px;' 
+          data-template-id="<%= template.escape('id') %>">
+          <a href="#/atemplates/<%= template.escape('id') %>/edit">Edit</a>
+    </button>    
+  </div>
+  <% }) %>
+
+  <div class="col-xs-10 col-xs-offset-1">
+    <a href="#/atemplates/new" class='create-template'>Create new template</a>  
+  </div>
 </div>
+
+<hr>
+<div class="saved-templates col-xs-12">
+  <h3>Saved Templates</h3><br>
+  
+  
+</div>
+
+
+

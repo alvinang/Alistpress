@@ -7,7 +7,8 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   routes: {
     "": "index",
     "atemplates/new": "newAtemplate",
-    "atemplates/:id": "showAtemplate"
+    "atemplates/:id": "showAtemplate",
+    "atemplates/:id/edit": "editAtemplate"
   },
   
   index: function() {
@@ -32,6 +33,14 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
     });
     
     this._swapView(showAtemplate);
+  },
+  
+  editAtemplate: function(id) {
+    var editAtemplate = new Alistpress.Views.AtemplateEdit({
+      model: Alistpress.atemplates.get(id)
+    });
+    
+    this._swapView(editAtemplate);
   },
   
   _swapView: function(view) {

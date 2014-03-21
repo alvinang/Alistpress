@@ -11,11 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320162111) do
+ActiveRecord::Schema.define(version: 20140321165402) do
 
   create_table "atemplates", force: true do |t|
-    t.string   "title",      null: false
-    t.text     "content",    null: false
+    t.string   "title",                    null: false
+    t.text     "content",                  null: false
+    t.string   "category",    default: ""
+    t.string   "description", default: ""
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -34,6 +36,20 @@ ActiveRecord::Schema.define(version: 20140320162111) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "themes", force: true do |t|
+    t.string   "recipient_email", default: "",    null: false
+    t.string   "sender_email",                    null: false
+    t.string   "title",           default: "",    null: false
+    t.text     "content",         default: "",    null: false
+    t.integer  "template_id"
+    t.boolean  "sent",            default: false, null: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "themes", ["recipient_email"], name: "index_themes_on_recipient_email"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -3,6 +3,8 @@ class CreateAtemplates < ActiveRecord::Migration
     create_table :atemplates do |t|
       t.string :title, null: false
       t.text :content, null: false
+      t.string :category, default: ""
+      t.string :description, default: ""
       t.references :user
       
       t.timestamps
