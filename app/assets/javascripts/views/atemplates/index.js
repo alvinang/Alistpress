@@ -4,10 +4,10 @@ window.Alistpress.Views.AtemplatesIndex = Backbone.View.extend({
   template: JST['atemplates/index'],
   
   initialize: function() {
-    this.listenTo(Alistpress.themes, "sync add remove change", this.render);
+    this.listenTo(Alistpress.themes, "sync add remove change request", this.render);
   },
   
-  event: {
+  events: {
     "click button.index-delete-theme": "deleteTheme"
   },
 
@@ -20,14 +20,19 @@ window.Alistpress.Views.AtemplatesIndex = Backbone.View.extend({
     return this;
   },
   
-  deleteTheme: function(event) {
-    event.preventDefault();
+  deleteTheme: function(event) {    
+    event.preventDefault();    
     var theme_id = $(event.currentTarget).data('id');
-    var model = Alistpress.themes.get(id);
-    Alistpress.themes.remove(this.model);
-    this.model.destroy();
-    Backbone.history.navigate("", { trigger: true });
-    debugger
+    var model = Alistpress.themes.get(theme_id);
+    
+    model.destroy({
+      success: function() {
+        Backbone.history.navigate("", { trigger: true });            
+      },
+      error: function() {
+        alert('Fail to delete');
+      }
+    });
   }
   
 });

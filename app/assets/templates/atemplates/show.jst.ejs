@@ -1,10 +1,60 @@
-<h1>You sent this email <%= theme.escape('updated_at') %></h1>
-<p>The following are the contents of your email:</p>
-<hr>
+<form class="jumbotron col-xs-10 col-xs-offset-1">
+<!-- <div class="jumbotron col-xs-10 col-xs-offset-1 create-new-template"> -->
+  
+  <p class='lead' style="font-size:16px;font-weight:200;line-height:1.4;">
+    <label for="r_email">To:</label> 
+    <input name="theme[recipient_email]" type="email" placeholder="Recipient Email" id="r_email" value="">
+  </p>
+  
+  <p style="font-size:16px;font-weight:200;line-height:1.4;">
+    <label for="t_email">From:</label>
+    <input name="theme[sender_email]" type="email" placeholder="Recipient Email" value="<%= Alistpress.current_user_email %>" id="t_email">
+  </p>
+  
+  <p class="theme-title-width">
+    <input id="wysihtml5-title" type="text" value="<%= atemplate.escape('title') %>" name="theme[title]">    
+  </p>
 
-<h3><%= theme.escape('title') %></h3>
-<div class="sent-email col-xs-10 col-offset-1">
-  <%= theme.escape('content') %>
-</div>
+  <p>
+    <textarea id="wysihtml5" class="col-xs-12" style="height: 200px;" placeholder="Enter Content" name="theme[content]">
+      <%= atemplate.escape('content') %>
+    </textarea>
+  </p>
+  
+  <p>
+    <button class="save-theme btn btn-primary pull-right" style="border-radius:0;" type="submit">Save</button>
+  </p>  
+<!-- </div> -->
+</form>
 
-<a href="#/">Back to Dashboard</a>
+<button class="send-theme btn btn-success pull-right" style="border-radius:0;" type="submit">Send</button>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+  
+  $('#wysihtml5-title').each(function(i, elem) {
+    $(elem).wysihtml5({
+    	"font-styles": false,
+    	"emphasis": false,
+    	"lists": false, 
+    	"html": false,
+    	"link": false, 
+    	"image": false, 
+    	"color": false 
+    });
+  });
+
+  $('#wysihtml5').each(function(i, elem) {
+    $(elem).wysihtml5({
+    	"font-styles": true,
+    	"emphasis": true,
+    	"lists": true, 
+    	"html": false,
+    	"link": true, 
+    	"image": true, 
+    	"color": true 
+    }); 
+  });
+  
+});
+</script>

@@ -19,25 +19,23 @@ window.Alistpress.Views.ThemeEdit = Backbone.View.extend({
   saveTheme: function(event) {
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON().theme;
-    this._newTheme(params);
+    this._existingTheme(params);
   },
   
   sendTheme: function(event) {
     event.preventDefault();
     var params = $('form').serializeJSON().theme;
     params.sent = new Boolean(true)
-    this._newTheme(params);      
+    this._existingTheme(params);      
   },
   
-  _newTheme: function(params) {    
-    params.user_id = Alistpress.current_user_id;
-    params.template_id = this.model.template_id;
-    params.id = this.model.id;
-    
-    var template = new Alistpress.Models.Theme(params);        
-    template.save({}, {
-      success: function(){
-        Alistpress.themes.add(template);             
+  _existingTheme: function(params) {    
+    var model = Alistpress.themes.get(this.model.id)
+            
+    model.save(params, {
+      success: function(savedModel){
+        Alistpress.themes.set(savedModel);  
+        
         Backbone.history.navigate("", { trigger: true });        
       },
       error: function(){

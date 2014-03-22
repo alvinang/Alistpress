@@ -1,0 +1,10 @@
+<h1>You sent this email <%= theme.escape('updated_at') %></h1>
+<p>The following are the contents of your email:</p>
+<hr>
+
+<h3><%= theme.escape('title') %></h3>
+<div class="sent-email col-xs-10 col-offset-1">
+  <%= theme.escape('content') %>
+</div>
+
+<a href="#/">Back to Dashboard</a>

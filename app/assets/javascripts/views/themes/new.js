@@ -1,5 +1,5 @@
 window.Alistpress.Views.ThemeNew = Backbone.View.extend({
-  tagName: 'row',  
+  className: 'row',  
   template: JST['themes/new'],
     
   //use this as a blank page so users can drag & drop if they want to  
