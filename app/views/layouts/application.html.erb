@@ -5,7 +5,11 @@
   <%= render partial: 'layouts/navbar' %>
   <%= render partial: 'layouts/messages' %>
 
-  <div class="container" id="wrap">  
+  <% if current_page?('/') %>  
+  <div id="wrap">  
+  <% else %>
+  <div id="wrap" class="container">
+  <% end %>
     <%= yield %>
   </div>
 

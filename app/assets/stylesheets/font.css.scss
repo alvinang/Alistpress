@@ -34,3 +34,13 @@
          url(font-path('ProximaNove_Thin.woff')) format('woff'), 
          url(font-path('ProximaNove_Thin.ttf'))  format('truetype')
 }
+
+.proxima-bold {
+  font-family: 'proxima_bold';
+  font-weight: normal;
+}
+
+.proxima-regular {
+  font-family: 'proxima_novaregular';
+  font-weight: normal;
+}

@@ -1,8 +1,15 @@
 @import 'bootstrap';
 
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
 nav {
   height: 72px;
   line-height: 72px;
+  .glyphicon-fire {
+    color: #08c;
+  }
 }
 
 #wrap {

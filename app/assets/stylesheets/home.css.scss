@@ -1,13 +1,53 @@
 .landing {
   height: 500px;
-  width: 150%;
+  width: 100%;
   background: url('https://jetstrap-site.s3.amazonaws.com/images/website/index/main_bg_image.jpg') repeat-x transparent 50% 50%;
-  margin-left: -100px;
   .landing-wrapper {
     padding: 150px 0px 20px 0px
   }  
-}
+  color: white;  
+  text-shadow: 0 0 10px rgba(0,0,0,.5);
+  .landing-title {
+    font-weight: 800;
+    letter-spacing: 5px;
+    font-size: 3.1em;
+    margin: 3px 0px 20px 0px;
+    text-shadow: 0 0 10px rgba(0,0,0,.5);  
+  }
+  .landing-description {
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 22px;
+  }
+  .opt-in{
+    margin-top: 70px;
+    text-transform: uppercase; 
+    .btn {
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-shadow: none;
+      padding: 20px 30px;
+      background-image: linear-gradient(90deg, #dc534b 0%, #d96f5f 100%);
+      background-image: -moz-linear-gradient(90deg, #dc534b 0%, #d96f5f 100%);
+      background-image: -webkit-linear-gradient(90deg, #dc534b 0%, #d96f5f 100%);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .2), inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .2), inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+      -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .2), inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+    }  
+    .demo {
+      display: block;
+      color: white;  
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      display: block;
+      text-decoration: none;
+      padding-top: 10px;
+      text-shadow: 0 0 10px rgba(0,0,0,.5);
+    }  
+  }
 
-.proxima-bold {
-  font-family: 'ProximaNova-Bold';
 }
