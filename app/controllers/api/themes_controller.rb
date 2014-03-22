@@ -8,6 +8,8 @@ class Api::ThemesController < ApplicationController
       ThemeMailer.send_email(@theme).deliver if @theme.sent
       render json: @theme
     else
+      # set on the rails end, need  to set on backbone as well
+      @theme.sent = false
       render json: @theme.errors.full_messages, status: 422
     end
   end

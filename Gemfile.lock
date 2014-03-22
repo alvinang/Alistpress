@@ -125,6 +125,8 @@ GEM
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.4)
+    puma (2.8.1)
+      rack (>= 1.1, < 2.0)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -212,6 +214,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   pg
+  puma
   quiet_assets
   rails (= 4.0.2)
   rails_12factor

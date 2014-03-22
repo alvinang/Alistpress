@@ -11,11 +11,11 @@
     <input name="theme[sender_email]" type="email" placeholder="Recipient Email" value="<%= theme.escape('sender_email') %>" id="t_email">
   </p>
   
-  <p class="theme-title-width">
+  <p class="theme-title">
     <input id="wysihtml5-title" type="text" value="<%= theme.escape('title') %>" name="theme[title]">    
   </p>
 
-  <p>
+  <p class="theme-content">
     <textarea id="wysihtml5" class="col-xs-12" style="height: 200px;" placeholder="Enter Content" name="theme[content]">
       <%= theme.escape('content') %>
     </textarea>
@@ -56,6 +56,10 @@ $(document).ready(function(){
     	"color": true 
     }); 
   });
+  
+  $('.theme-content > input[type="hidden"]').remove();
+  $('.theme-content > iframe').remove();
+  $('.theme-content > textarea').val($.trim($('.theme-content > textarea').val()));
   
 });
 </script>

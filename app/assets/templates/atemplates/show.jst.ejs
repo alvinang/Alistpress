@@ -1,9 +1,8 @@
 <form class="jumbotron col-xs-10 col-xs-offset-1">
-<!-- <div class="jumbotron col-xs-10 col-xs-offset-1 create-new-template"> -->
   
   <p class='lead' style="font-size:16px;font-weight:200;line-height:1.4;">
     <label for="r_email">To:</label> 
-    <input name="theme[recipient_email]" type="email" placeholder="Recipient Email" id="r_email" value="">
+    <input name="theme[recipient_email]" type="email" placeholder="Recipient Email" id="r_email" value="" autofocus>
   </p>
   
   <p style="font-size:16px;font-weight:200;line-height:1.4;">
@@ -11,12 +10,12 @@
     <input name="theme[sender_email]" type="email" placeholder="Recipient Email" value="<%= Alistpress.current_user_email %>" id="t_email">
   </p>
   
-  <p class="theme-title-width">
+  <p class="theme-title">
     <input id="wysihtml5-title" type="text" value="<%= atemplate.escape('title') %>" name="theme[title]">    
   </p>
 
-  <p>
-    <textarea id="wysihtml5" class="col-xs-12" style="height: 200px;" placeholder="Enter Content" name="theme[content]">
+  <p class="theme-content">
+    <textarea id="wysihtml5" class="col-xs-12" style="height: 200px;" name="theme[content]">
       <%= atemplate.escape('content') %>
     </textarea>
   </p>
@@ -56,5 +55,9 @@ $(document).ready(function(){
     }); 
   });
   
+  $('.theme-content > input[type="hidden"]').remove();
+  $('.theme-content > iframe').remove();
+  $('.theme-content > textarea').val($.trim($('.theme-content > textarea').val()));
+
 });
 </script>

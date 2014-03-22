@@ -13,6 +13,7 @@
 //= require jquery.serializeJSON
 //= require bootstrap-wysihtml5/b3
 //= require bootstrap
+//= require mousetrap.min
 //= require underscore
 //= require backbone
 //= require alistpress
@@ -22,4 +23,3 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
-

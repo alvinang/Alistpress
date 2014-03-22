@@ -18,7 +18,7 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
   },
   
   saveTheme: function(event) {
-    event.preventDefault();
+    event.preventDefault();  
     var params = $(event.currentTarget).serializeJSON().theme;
     this._newTheme(params);
   },
@@ -34,14 +34,16 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
     params.user_id = Alistpress.current_user_id;
     params.template_id = this.model.id;
     
-    var template = new Alistpress.Models.Theme(params);        
+    var template = new Alistpress.Models.Theme(params);  
+          
     template.save({}, {
       success: function(){
         Alistpress.themes.add(template);             
         Backbone.history.navigate("", { trigger: true });        
       },
       error: function(){
-        alert("didn't save.....");
+        // need to set sent to false again..
+        alert("didn't send or save.....");
       }
     });
   }

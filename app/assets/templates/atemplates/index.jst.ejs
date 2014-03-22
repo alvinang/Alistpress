@@ -1,9 +1,4 @@
-<h1>Welcome to your dashboard, haha..</h1>
-
-<p>
-  Dude, I'm the dashboard! :)<br>
-  PS: "dude" is gender neutral...
-</p>
+<h1>Welcome to your dashboard!</h1>
 
 <hr>
 <div class="my-templates col-xs-12 row">
@@ -13,11 +8,11 @@
   <div class="panel panel-success col-xs-3">
     <div class="panel-heading">
       <h3 class="panel-title">
-        <a href="#/atemplates/<%= atemplate.escape('id') %>"><%= atemplate.escape('title') %></a>
+        <a href="#/atemplates/<%= atemplate.escape('id') %>"><%= atemplate.escape('description') %></a>
       </h3>
     </div>
     <div class="panel-body">
-     <%= atemplate.escape('description') %>
+     <%= atemplate.escape('title') %>
     </div>
     <a href="#/atemplates/<%= atemplate.escape('id') %>/edit"
       class="btn btn-xs btn-default pull-right"   
@@ -33,7 +28,7 @@
 <hr>
             
 <div class="saved-templates col-xs-12">
-  <h3>Saved Templates</h3><br>
+  <h3>Work In Progress Emails</h3><br>
   <table class="table table-striped table-hover">
     <thead>
       <tr>
@@ -69,7 +64,7 @@
 <hr>
 
 <div class="saved-templates col-xs-12">
-  <h3>Sent Templates</h3><br>
+  <h3>Successfully Sent Emails</h3><br>
   <table class="table table-striped table-hover">
     <thead>
       <tr>
@@ -80,11 +75,13 @@
     </thead>
     <tbody>
   <% Alistpress.themes.forEach(function(theme){ %>
-    <% if (theme.escape('sent') === 'true') { %>            
-    <tr>
-      <td><%= theme.escape('recipient_email') %></td>
-      <td><%= theme.escape('title') %></td>
-      <td><%= theme.escape('updated_at') %></td>
+    <% if (theme.escape('sent') === 'true') { %>                
+    <tr>  
+      <!-- <a href="#/themes/<%= theme.id %>">     -->
+        <td><%= theme.escape('recipient_email') %></td>
+        <td><%= theme.escape('title') %></td>
+        <td><%= theme.escape('updated_at') %></td>
+      <!-- </a> -->
     </tr>
     <% } %> 
   <% }); %> 

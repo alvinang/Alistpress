@@ -29,6 +29,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'annotate'
   gem 'quiet_assets'
+  gem 'puma'
 end
 
 group :production do
