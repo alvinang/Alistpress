@@ -41,11 +41,13 @@
     <tbody>
   <% Alistpress.themes.forEach(function(theme){ %>
     
-    <% if (theme.escape('sent') === 'false') { %>   
+    <% if (theme.escape('sent') === 'false') { %> 
+      <% var theme_date = new Date(Date.parse(theme.escape('updated_at'))) %>  
     <tr>
       <td><%= theme.escape('recipient_email') %></td>
       <td><%= theme.escape('title') %></td>
-      <td><%= theme.escape('updated_at') %></td>
+      <td><%= theme_date.toUTCString().slice(0, -4)
+ %></td>
       <td>
         <button class="index-edit-theme">
           <a href="#/themes/<%= theme.escape('id') %>/edit">
@@ -75,13 +77,12 @@
     </thead>
     <tbody>
   <% Alistpress.themes.forEach(function(theme){ %>
-    <% if (theme.escape('sent') === 'true') { %>                
+    <% if (theme.escape('sent') === 'true') { %>  
+      <% var theme_date = new Date(Date.parse(theme.escape('updated_at'))) %>        
     <tr>  
-      <!-- <a href="#/themes/<%= theme.id %>">     -->
         <td><%= theme.escape('recipient_email') %></td>
         <td><%= theme.escape('title') %></td>
-        <td><%= theme.escape('updated_at') %></td>
-      <!-- </a> -->
+        <td><%= theme_date.toUTCString().slice(0, -4) %></td>
     </tr>
     <% } %> 
   <% }); %> 
