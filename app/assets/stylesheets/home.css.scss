@@ -1,9 +1,9 @@
 .landing {
-  height: 500px;
+  height: 480px;
   width: 100%;
   background: url('https://jetstrap-site.s3.amazonaws.com/images/website/index/main_bg_image.jpg') repeat-x transparent 50% 50%;
   .landing-wrapper {
-    padding: 150px 0px 20px 0px
+    padding: 120px 0px 20px 0px
   }  
   color: white;  
   text-shadow: 0 0 10px rgba(0,0,0,.5);
@@ -29,7 +29,7 @@
       font-weight: bold;
       letter-spacing: 3px;
       text-shadow: none;
-      padding: 20px 30px;
+      padding: 20px 20px;
       background-image: linear-gradient(90deg, #dc534b 0%, #d96f5f 100%);
       background-image: -moz-linear-gradient(90deg, #dc534b 0%, #d96f5f 100%);
       background-image: -webkit-linear-gradient(90deg, #dc534b 0%, #d96f5f 100%);
@@ -40,7 +40,7 @@
     .demo {
       display: block;
       color: white;  
-      font-size: 14px;
+      font-size: 12px;
       font-weight: bold;
       letter-spacing: 2px;
       display: block;

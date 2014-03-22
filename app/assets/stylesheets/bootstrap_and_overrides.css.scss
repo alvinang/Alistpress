@@ -5,8 +5,25 @@ body {
 }
 
 nav {
-  height: 72px;
-  line-height: 72px;
+  height: 72px !important;
+  line-height: 72px !important;
+  font-weight: 500;
+  letter-spacing: 2px;
+  .navbar-header {
+    padding: 10px 30px;
+    .navbar-brand {
+      color: white !important;    
+    }  
+  }
+  .nav {
+    padding: 10px 30px;  
+    li a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0px;
+    }
+  }  
   .glyphicon-fire {
     color: #08c;
   }
