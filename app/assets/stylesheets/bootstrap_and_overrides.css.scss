@@ -1,3 +1,14 @@
+@import 'bootstrap';
+
+nav {
+  height: 72px;
+  line-height: 72px;
+}
+
+#wrap {
+  padding-top: 72px;
+}
+
 .jumbotron {
   border-radius: 0 !important;
 }
@@ -6,4 +17,3 @@ footer {
   padding-top: 60px;
 }
 
-@import 'bootstrap';
