@@ -4,6 +4,7 @@ window.Alistpress.Views.AtemplatesIndex = Backbone.View.extend({
   template: JST['atemplates/index'],
   
   initialize: function() {
+    this.listenTo(Alistpress.atemplates, "sync add remove change", this.render);
     this.listenTo(Alistpress.themes, "sync add remove change request", this.render);
   },
   

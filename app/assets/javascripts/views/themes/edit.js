@@ -34,7 +34,7 @@ window.Alistpress.Views.ThemeEdit = Backbone.View.extend({
             
     model.save(params, {
       success: function(savedModel){
-        Alistpress.themes.set(savedModel);  
+        Alistpress.themes.add(savedModel, { merge: true });  
         
         Backbone.history.navigate("", { trigger: true });        
       },
