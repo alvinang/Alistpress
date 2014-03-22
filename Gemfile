@@ -30,6 +30,7 @@ group :development, :test do
   gem 'annotate'
   gem 'quiet_assets'
   gem 'puma'
+  gem 'letter_opener'
 end
 
 group :production do

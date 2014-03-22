@@ -5,7 +5,7 @@ class Api::ThemesController < ApplicationController
     @theme = Theme.new(theme_params)
     
     if @theme.save
-      ThemeMailer.send_email(@theme).deliver if @theme.sent
+      ThemeMailer.send_email(@theme).deliver! if @theme.sent
       render json: @theme
     else
       # set on the rails end, need  to set on backbone as well
@@ -32,7 +32,7 @@ class Api::ThemesController < ApplicationController
     @theme = Theme.find(params[:id])
     
     if @theme.update_attributes(theme_params)
-      ThemeMailer.send_email(@theme).deliver if @theme.sent
+      ThemeMailer.send_email(@theme).deliver! if @theme.sent
       render json: @theme
     else
       render json: @theme.errors.full_messages, status: 422
