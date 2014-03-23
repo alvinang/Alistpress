@@ -51,13 +51,21 @@ $(document).ready(function(){
     	"html": false,
     	"link": true, 
     	"image": true, 
-    	"color": true 
+    	"color": true,
+      "events": {
+        "load": function() {
+          alert('i just got loaded');
+        },
+        "focus:textarea": function() {
+          
+        }
+      } 
     }); 
   });
   
-  $('.theme-content > input[type="hidden"]').remove();
-  $('.theme-content > iframe').remove();
-  $('.theme-content > textarea').val($.trim($('.theme-content > textarea').val()));
+  // $('.theme-content > input[type="hidden"]').remove();
+  // $('.theme-content > iframe').remove();
+  // $('.theme-content > textarea').val($.trim($('.theme-content > textarea').val()));
   
   $('.send-theme').click(function () {
      var btn = $(this)

@@ -28,7 +28,7 @@
   <a href="#/" class="btn btn-default">Back</a>
 </form>
 
-<button class="send-theme btn btn-success pull-right" style="border-radius:0;" type="submit">Send</button>
+<button class="send-theme btn btn-success pull-right" style="border-radius:0;" type="submit" data-loading-text="Sending...">Send</button>
 
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
@@ -38,7 +38,6 @@ $(document).ready(function(){
     	"font-styles": false,
     	"emphasis": false,
     	"lists": false, 
-    	"html": false,
     	"link": false, 
     	"image": false, 
     	"color": false 
@@ -50,16 +49,27 @@ $(document).ready(function(){
     	"font-styles": true,
     	"emphasis": true,
     	"lists": true, 
-    	"html": false,
     	"link": true, 
     	"image": true, 
-    	"color": true 
+    	"color": true,
+      "events": {
+        "load": function() {
+          alert('i just got loaded');
+        },
+        "focus:textarea": function() {
+        }
+      } 
     }); 
   });
   
-  $('.theme-content > input[type="hidden"]').remove();
-  $('.theme-content > iframe').remove();
-  $('.theme-content > textarea').val($.trim($('.theme-content > textarea').val()));
+  // $('.theme-content > input[type="hidden"]').remove();
+  // $('.theme-content > iframe').remove();
+  // $('.theme-content > textarea').val($.trim($('.theme-content > textarea').val()));    
+  
+  $('.send-theme').click(function () {
+     var btn = $(this)
+     btn.button('loading')
+   });
   
 });
 </script>
