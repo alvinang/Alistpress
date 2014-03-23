@@ -45,9 +45,19 @@ nav {
   border-radius: 0;
 }
 
-.modal-content {
-  border-radius: 0;
-  overflow-x: hidden;  
+.modal-dialog {
+  width: 800px;
+  
+  .modal-content {
+    border-radius: 0;
+    overflow-x: hidden;  
+    height: 550px;
+    width: 800px;
+    
+    .omb_login {
+      margin-left: -370px;
+    }
+  }
 }
 
 #footer {
