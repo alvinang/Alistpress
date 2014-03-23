@@ -1,7 +1,7 @@
 .landing {
-  height: 480px;
+  min-height: 480px;
   width: 100%;
-  background: url('https://jetstrap-site.s3.amazonaws.com/images/website/index/main_bg_image.jpg') repeat-x transparent 50% 50%;
+  background: url('landing-page.jpg') repeat-x transparent 50% 50%;
   .landing-wrapper {
     padding: 120px 0px 20px 0px
   }  
@@ -49,5 +49,24 @@
       text-shadow: 0 0 10px rgba(0,0,0,.5);
     }  
   }
+}
 
+.landing-content {
+  padding-top: 60px; 
+  padding-bottom: 60px; 
+  .square {
+    margin-left: auto;
+    margin-right: auto;
+    width: 120px;
+    height: 120px;
+    background: rgba(0, 136, 204, 0.79);    
+  }
+  .glyphicon {
+    font-size: 50px;
+    color: white;
+    line-height: 120px;
+  }
+  .glyphicon-send {
+    margin-right: 10px;
+  }
 }

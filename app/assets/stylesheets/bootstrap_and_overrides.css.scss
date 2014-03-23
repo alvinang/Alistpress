@@ -23,8 +23,11 @@ nav {
       font-weight: bold;
       letter-spacing: 0px;
     }
+    .active a {
+      background-color: #222222 !important;
+    }
   }  
-  .glyphicon-fire {
+  .glyphicon {
     color: #08c;
   }
 }
@@ -38,6 +41,36 @@ nav {
 }
 
 footer {
-  padding-top: 60px;
+  .company-info {
+    background-color: #444;
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 60px;
+    min-height: 100px;
+    line-height: 100px;
+    color: #eee;
+    font-weight: bold;
+    a {
+      margin-left: 30px;
+    }
+  }
+  .copyright {
+    background-color: #333;
+    width: 100%;
+    min-height: 60px;
+    line-height: 60px;
+    color: #ddd;
+    padding-left: 90px;
+    padding-right: 90px;
+    font-size: 12px;
+  }
+  a {
+    color: #ddd;
+    margin-left: 15px;
+    &:hover{
+     color: white; 
+     text-decoration: none;
+    }
+  }
 }
 
