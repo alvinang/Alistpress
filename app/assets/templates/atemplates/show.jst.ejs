@@ -26,7 +26,7 @@
 <!-- </div> -->
 </form>
 
-<button class="send-theme btn btn-success pull-right" style="border-radius:0;" type="submit">Send</button>
+<button class="send-theme btn btn-success pull-right" style="border-radius:0;" type="submit" data-loading-text="Sending...">Send</button>
 
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
@@ -58,6 +58,11 @@ $(document).ready(function(){
   $('.theme-content > input[type="hidden"]').remove();
   $('.theme-content > iframe').remove();
   $('.theme-content > textarea').val($.trim($('.theme-content > textarea').val()));
+  
+  $('.send-theme').click(function () {
+     var btn = $(this)
+     btn.button('loading')
+   });
 
 });
 </script>

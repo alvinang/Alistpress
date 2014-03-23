@@ -36,6 +36,19 @@ nav {
   padding-top: 72px;
 }
 
+.alert {
+  margin-top: 72px;
+  margin-bottom: -72px;
+  border-radius:0;
+}
+
+.modal-content {
+  border-radius: 0;
+}
+.modal {
+  overflow-x: hidden;
+}
+
 .jumbotron {
   border-radius: 0 !important;
 }
@@ -55,7 +68,7 @@ footer {
     }
   }
   .copyright {
-    background-color: #333;
+    background-color: #2b3442;
     width: 100%;
     min-height: 60px;
     line-height: 60px;
