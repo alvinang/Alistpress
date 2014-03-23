@@ -1,72 +1,72 @@
+@import 'utils';
+
 .landing {
   min-height: 480px;
   width: 100%;
   background: url('landing-page.jpg') repeat-x transparent 50% 50%;
-  .landing-wrapper {
-    padding: 120px 0px 20px 0px
-  }  
   color: white;  
-  text-shadow: 0 0 10px rgba(0,0,0,.5);
+  text-shadow: $font-shadow;  
+  
+  .landing-wrapper { padding: 120px 0px 20px 0px }  
+
   .landing-title {
     font-weight: 800;
     letter-spacing: 5px;
     font-size: 3.1em;
     margin: 3px 0px 20px 0px;
-    text-shadow: 0 0 10px rgba(0,0,0,.5);  
+    text-shadow: $font-shadow;  
   }
+  
   .landing-description {
     font-weight: normal;
     letter-spacing: 1px;
     font-size: 22px;
   }
-  .opt-in{
+  
+  .opt-in {
     margin-top: 70px;
     text-transform: uppercase; 
+    
     .btn {
-      border-radius: 2px;
+      @include background-image(90deg, #dc534b 0%, #d96f5f 100%);
+      @include box-shadow(0 1px 3px rgba(0, 0, 0, .2), inset 0px 1px 0px rgba(255, 255, 255, 0.2));
+      @include border-radius(2px);
       display: inline-block;
       font-size: 18px;
       font-weight: bold;
       letter-spacing: 3px;
       text-shadow: none;
       padding: 20px 20px;
-      background-image: linear-gradient(90deg, #dc534b 0%, #d96f5f 100%);
-      background-image: -moz-linear-gradient(90deg, #dc534b 0%, #d96f5f 100%);
-      background-image: -webkit-linear-gradient(90deg, #dc534b 0%, #d96f5f 100%);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, .2), inset 0px 1px 0px rgba(255, 255, 255, 0.2);
-      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .2), inset 0px 1px 0px rgba(255, 255, 255, 0.2);
-      -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .2), inset 0px 1px 0px rgba(255, 255, 255, 0.2);
-    }  
+    } 
+     
     .demo {
       display: block;
+      padding-top: 10px;
       color: white;  
       font-size: 12px;
       font-weight: bold;
       letter-spacing: 2px;
-      display: block;
       text-decoration: none;
-      padding-top: 10px;
-      text-shadow: 0 0 10px rgba(0,0,0,.5);
+      text-shadow: $font-shadow;
     }  
   }
 }
 
 .landing-content {
-  padding-top: 60px; 
-  padding-bottom: 60px; 
+  padding: 60px 0 60px; 
+  
   .square {
-    margin-left: auto;
-    margin-right: auto;
+    @include position-center;
     width: 120px;
     height: 120px;
     background: rgba(0, 136, 204, 0.79);    
   }
+  
   .glyphicon {
     font-size: 50px;
     color: white;
     line-height: 120px;
   }
-  .glyphicon-send {
-    margin-right: 10px;
-  }
+  
+  .glyphicon-send { margin-right: 10px; }
 }

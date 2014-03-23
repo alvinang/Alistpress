@@ -1,0 +1,32 @@
+@mixin minline-height($height) {
+  min-height: $height;
+  line-height: $height; 
+}
+
+@mixin background-image($direction, $col1, $col2) {
+  background-image: -webkit-linear-gradient($direction, $col1, $col2);
+  background-image:    -moz-linear-gradient($direction, $col1, $col2);
+  background-image:     -ms-linear-gradient($direction, $col1, $col2);
+  background-image:         linear-gradient($direction, $col1, $col2);
+}
+
+@mixin box-shadow($shadow, $inset) {
+  -webkit-box-shadow: $shadow, $inset;
+     -moz-box-shadow: $shadow, $inset;
+      -ms-box-shadow: $shadow, $inset;
+          box-shadow: $shadow, $inset;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin position-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+$font-shadow: 0 0 10px rgba(0,0,0,.5);
