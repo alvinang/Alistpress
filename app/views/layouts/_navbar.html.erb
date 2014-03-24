@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-inverse" role="navigation">
+  <nav class="navbar navbar-default navbar-inverse" role="navigation">
     <div class="container">    
       <div class="navbar-header">
 
@@ -17,12 +17,12 @@
       <div class="collapse navbar-collapse" id="nav-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="/">Home</a></li>
-          <li><%= link_to 'Features' %></li>
           <li><%= link_to 'Plans' %></li>
           <% if user_signed_in? %>
           <li><%= link_to 'Account Settings' %></li>
           <li><%= link_to 'Log out', destroy_user_session_url, method: :delete %></li>
           <% else %>
+          <li><%= link_to 'Features' %></li>
           <li><%= link_to 'Login', new_user_session_url, 'data-toggle' => 'modal', 'data-target' => '#logIn' %></li>
           <li>
             <%= link_to 'Sign Up', new_user_registration_url, 'data-toggle' => 'modal', 'data-target' => '#signUp' %>

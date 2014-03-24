@@ -1,5 +1,5 @@
 window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
-  tagName: 'row',
+  className: 'row',
   
   template: JST['atemplates/show'],
   
