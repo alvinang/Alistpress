@@ -30,6 +30,16 @@
 
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
+
+  var selectNextBlock = function(text) {
+    var foundSomething = text.match(/\{{(.*?)\}}/); // returns array of 2 stuff
+    if (foundSomething) {
+      foundSomething.select();
+      alert(foundSomething.select());
+    } else {
+      alert("yo, you're done!");
+    };
+  };
   
   $('#wysihtml5').each(function(i, elem) {
     $(elem).wysihtml5({
@@ -41,18 +51,14 @@ $(document).ready(function(){
     	"image": true,
     	"color": false, 
       "events": {
-        "load": function() {
-        },
-        "focus:textarea": function() {
-          
+        "focus": function(event) {
+          debugger
+          var textareaContent = $('#wysihtml5').val();
+          selectNextBlock($('textarea'))
         }
       } 
     }); 
   });
-  
-  // $('.theme-content > input[type="hidden"]').remove();
-  // $('.theme-content > iframe').remove();
-  // $('.theme-content > textarea').val($.trim($('.theme-content > textarea').val()));
   
   $('.send-theme').click(function () {
      var btn = $(this)

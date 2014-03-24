@@ -12,9 +12,9 @@
   </div>
 
   <div class="form-group">
-    <label for="content" class="col-xs-2 control-label">Template</label>
+    <label for="wysihtml5" class="col-xs-2 control-label">Template</label>
     <div class="col-xs-8">
-      <textarea name="atemplate[content]" class="form-control" id="content" rows="10" placeholder="Template"><%= atemplate.escape('content') %></textarea>
+      <textarea name="atemplate[content]" class="form-control" id="wysihtml5" rows="20" placeholder="Template"><%= atemplate.escape('content') %></textarea>
     </div>
   </div>
   
@@ -40,3 +40,21 @@
 </form>
 
 <a href="#/">Back</a>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+  
+  $('#wysihtml5').each(function(i, elem) {
+    $(elem).wysihtml5({
+    	"font-styles": true,
+    	"emphasis": true,
+    	"lists": true, 
+    	"html": true, 
+    	"link": true,
+    	"image": true,
+    	"color": false
+    }); 
+  });
+
+});
+</script>

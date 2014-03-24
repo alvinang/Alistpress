@@ -8,8 +8,12 @@ html {
   body {
     -webkit-font-smoothing: antialiased;
     margin-bottom: 60px;  
-    #wrap { padding-top: 72px; }
   }
+}
+
+nav.navbar {
+  @include border-radius(0);
+  margin-bottom: 0;
 }
 
 nav {
@@ -46,7 +50,7 @@ nav {
 
 .alert {
   @extend .jumbotron;
-  margin: 72px 0 -72px;
+  margin-bottom: 0;
 }
 
 .modal-dialog {
