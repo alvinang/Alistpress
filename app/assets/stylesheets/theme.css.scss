@@ -1,15 +1,12 @@
 .theme-title {
-  iframe {
-    width: 80% !important;
+  width: 80% !important;
+  input {
+    width: 100%;
   }
 }
 
 .theme-content {
   textarea {
     height: 600px !important;
-    display: block !important;
-  }
-  iframe {
-    display: none !important;
   }
 }

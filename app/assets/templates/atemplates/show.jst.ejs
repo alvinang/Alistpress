@@ -11,11 +11,11 @@
   </p>
   
   <p class="theme-title">
-    <input id="wysihtml5-title" type="text" value="<%= atemplate.escape('title') %>" name="theme[title]">    
+    <input type="text" value="<%= atemplate.escape('title') %>" name="theme[title]">    
   </p>
 
   <p class="theme-content">
-    <textarea id="wysihtml5" class="col-xs-12" style="height: 200px;" name="theme[content]">
+    <textarea id="wysihtml5" class="col-xs-12" name="theme[content]">
       <%= atemplate.escape('content') %>
     </textarea>
   </p>
@@ -31,30 +31,17 @@
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
   
-  $('#wysihtml5-title').each(function(i, elem) {
-    $(elem).wysihtml5({
-    	"font-styles": false,
-    	"emphasis": false,
-    	"lists": false, 
-    	"html": false,
-    	"link": false, 
-    	"image": false, 
-    	"color": false 
-    });
-  });
-
   $('#wysihtml5').each(function(i, elem) {
     $(elem).wysihtml5({
     	"font-styles": true,
     	"emphasis": true,
     	"lists": true, 
-    	"html": false,
-    	"link": true, 
-    	"image": true, 
-    	"color": true,
+    	"html": true, 
+    	"link": true,
+    	"image": true,
+    	"color": false, 
       "events": {
         "load": function() {
-          alert('i just got loaded');
         },
         "focus:textarea": function() {
           

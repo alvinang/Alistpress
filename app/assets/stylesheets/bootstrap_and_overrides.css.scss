@@ -40,9 +40,13 @@ nav {
   }  
 }
 
+.jumbotron {
+  border-radius: 0 !important;
+}
+
 .alert {
+  @extend .jumbotron;
   margin: 72px 0 -72px;
-  border-radius: 0;
 }
 
 .modal-dialog {
