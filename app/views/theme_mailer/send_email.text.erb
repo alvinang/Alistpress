@@ -1,1 +1,1 @@
-<%= @theme.content.html_safe %>
+<%= strip_tags(strip_links(@theme.content)) %>
