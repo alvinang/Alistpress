@@ -26,7 +26,7 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
   sendTheme: function(event) {
     event.preventDefault();
     var params = $('form').serializeJSON().theme;
-    params.sent = new Boolean(true)
+    params.sent = new Boolean(true);
     this._newTheme(params);      
   },
   

@@ -19,7 +19,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'uuidtools'
 
-# 3rd parth apps
+# 3rd parth apps/tools
 gem 'newrelic_rpm'
 gem 'bootstrap-wysihtml5-rails'
 

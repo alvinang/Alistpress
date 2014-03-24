@@ -31,15 +31,41 @@
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
 
-  var selectNextBlock = function(text) {
-    var foundSomething = text.match(/\{{(.*?)\}}/); // returns array of 2 stuff
-    if (foundSomething) {
-      foundSomething.select();
-      alert(foundSomething.select());
-    } else {
-      alert("yo, you're done!");
-    };
-  };
+  // var selectNextBlock = function(text) {
+  //   var foundSomething = text.match(/\{{(.*?)\}}/); // returns array of 2 stuff
+  //   if (foundSomething) {
+  //     foundSomething.select();
+  //     alert(foundSomething.select());
+  //   } else {
+  //     alert("yo, you're done!");
+  //   };
+  // },
+  
+  new function($) {
+    $.fn.setCursorPosition = function(pos) {
+      if (this.setSelectionRange) {
+        this.setSelectionRange(pos, pos);
+      } else if (this.createTextRange) {
+        var range = this.createTextRange();
+        range.collapse(true);
+        if(pos < 0) {
+          pos = $(this).val().length + pos;
+        }
+        range.moveEnd('character', pos);
+        range.moveStart('character', pos);
+        range.select();
+      }
+    }
+  }(jQuery);
+  
+  
+  // Steps:
+
+
+  // 3. match to regex 
+  // 4. focus & select
+  // $($(this).children()[2]).html().match(/\{{(.*?)\}}/g)
+
   
   $('#wysihtml5').each(function(i, elem) {
     $(elem).wysihtml5({
@@ -51,10 +77,27 @@ $(document).ready(function(){
     	"image": true,
     	"color": false, 
       "events": {
-        "focus": function(event) {
-          debugger
-          var textareaContent = $('#wysihtml5').val();
-          selectNextBlock($('textarea'))
+        "focus": function() {
+          $('.wysihtml5-sandbox').contents().find('body').on("keydown",function(event) {          
+            event.preventDefault(); 
+            var numLoops = _.size($(this).children());            
+            var keyCode = event.keyCode || event.which;
+                
+            if (keyCode == 9){
+              // loop thru all children divs
+              for (var i = 0; i < numLoops; i++) {
+                // get array of all matched items {{}}
+                var sentence = $($(this).children()[i]).html();
+                var toSwap = sentence.match(/\{{(.*?)\}}/g);
+                var numSwap = _.size(toSwap);
+                //loop through all matched items
+                for (var j = 0; j < numSwap; j++){
+                  var startIndex = sentence.indexOf(toSwap);
+                  $($(this).children()[0]).setCursorPosition(startIndex);                  
+                }                
+              }                         
+            }      
+         });                               
         }
       } 
     }); 
