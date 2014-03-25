@@ -8,6 +8,22 @@
   min-height: 1000px;
   width: 15%;
   
+  .dashboard-logo {
+    padding: 30px 20px 45px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 50px;
+    text-decoration: none;
+    
+    a { 
+      color: white; 
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+        
+    span { color: #428bca;}
+  }
+  
   div {
     padding: 10px;
   }

@@ -1,14 +1,8 @@
 <form class="jumbotron col-xs-10 col-xs-offset-1">
   
-  <p class='lead' style="font-size:16px;font-weight:200;line-height:1.4;">
-    <label for="r_email">To:</label> 
-    <input name="theme[recipient_email]" type="email" placeholder="Recipient Email" id="r_email" value="" autofocus>
-  </p>
+  <p><input name="theme[recipient_email]" type="email" placeholder="Email to:" value="" autofocus></p>
   
-  <p style="font-size:16px;font-weight:200;line-height:1.4;">
-    <label for="t_email">From:</label>
-    <input name="theme[sender_email]" type="email" placeholder="Recipient Email" value="<%= Alistpress.current_user_email %>" id="t_email">
-  </p>
+  <p><input name="theme[sender_email]" type="email" placeholder="Subject" value="<%= Alistpress.current_user_email %>"></p>
   
   <p class="theme-title">
     <input type="text" value="<%= atemplate.escape('title') %>" name="theme[title]">    

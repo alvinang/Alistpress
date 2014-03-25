@@ -3,7 +3,7 @@ window.Alistpress.Views.SidebarIndex = Backbone.View.extend({
   tagName: 'section', 
   className: 'sidebar-section',
   
-  template: JST['sidebar/index'],
+  template: JST['home/sidebar'],
   
   render: function() {
     var renderedContent = this.template({});

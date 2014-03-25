@@ -51,10 +51,11 @@ nav {
 
 .jumbotron {
   border-radius: 0 !important;
+  margin-left: 60px;
 }
 
 .alert {
-  @extend .jumbotron;
+  border-radius: 0 !important;
   margin-bottom: 0;
 }
 

@@ -1,10 +1,16 @@
 @import 'utils';
 
+.content-header > h1 {
+  font-size: 24px;
+  padding-bottom: 15px;
+}
+
 .dashboard {
   padding-left: 30px;
   background-color: #f9f9f9;
   min-height: 1000px;
-  padding-top: 30px;
+  padding-top: 15px;
+  margin-bottom: 30px;
 }
 
 form {

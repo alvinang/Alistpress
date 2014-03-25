@@ -2,9 +2,11 @@
 <html>
 <%= render partial: 'layouts/head' %>
 <body>
-  <%= render partial: 'layouts/navbar' %>
+  <% if !user_signed_in? %>  
+    <%= render partial: 'layouts/navbar' %>  
+  <% end %>
   
-    <%= render partial: 'layouts/messages' %>
+  <%= render partial: 'layouts/messages' %>
 
   <% if current_page?('/') %>  
   <div id="wrap">  
