@@ -1,6 +1,6 @@
-window.Alistpress.Views.UserProfile = Backbone.View.extend({
+window.Alistpress.Views.User = Backbone.View.extend({
   
-  template: JST['home/user_profile'],
+  template: JST['home/user'],
   
   render: function() {
     var renderedContent = this.template({

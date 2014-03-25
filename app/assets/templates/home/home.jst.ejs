@@ -7,7 +7,7 @@
     <a href="#/atemplates" class='home-box'>
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3>15</h3>
+          <h3><%= _.size(atemplates.models) %></h3>
           <p>My Templates</p>
         </div>
         <div class="icon">
@@ -24,7 +24,7 @@
     <a href="#/themes" class="home-box">
       <div class="small-box bg-yellow">
         <div class="inner">
-          <h3>15</h3>
+          <h3><%= _.size(Alistpress.themes.models) - sentThemes %></h3>
           <p>Work-in-Progress Templates</p>
         </div>
         <div class="icon">
@@ -41,15 +41,15 @@
     <a href="#/themes/sent" class="home-box">
       <div class="small-box bg-green">
         <div class="inner">
-          <h3>13</h3>
+          <h3><%= sentThemes %></h3>
           <p>Email Sent</p>
         </div>
         <div class="icon">
           <i class="ion ion-paper-airplane"></i>
         </div>
-        <a href="#/themes/sent" class="small-box-footer">
+        <div class="small-box-footer">
           More info <i class="fa fa-arrow-circle-right"></i>
-        </a>
+        </div>
       </div>
     </a>
   </div>
@@ -58,26 +58,20 @@
     <a href="#/store" class="home-box">
       <div class="small-box bg-red">
         <div class="inner">
-          <h3>65</h3>
+          <h3>23</h3>
           <p>Premium Store Templates</p>
         </div>
         <div class="icon">
           <i class="ion ion-locked"></i>
         </div>
-        <a href="#/store" class="small-box-footer">
+        <div class="small-box-footer">
           More info <i class="fa fa-arrow-circle-right"></i>
-        </a>
+        </div>
       </div>
     </a>
   </div>
 </div>
 <hr>
-
-<div class="row">
-    <div class="col-xs-12 connectedSortable">
-        
-    </div>
-</div>
 
 <section class="col-lg-6 connectedSortable">
   <div class="box box-info">
@@ -97,7 +91,7 @@
           <input type="text" class="form-control" name="subject" placeholder="Subject"/>
         </div>
         <div>
-          <textarea class="home-email" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+          <textarea class="home-email" placeholder="Message"></textarea>
         </div>
       </form>
     </div>

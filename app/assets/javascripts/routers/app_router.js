@@ -35,8 +35,8 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   },
   
   userProfile: function() {
-    var userProfile = new Alistpress.Views.UserProfile({
-      model: Alistpress.atemplates
+    var userProfile = new Alistpress.Views.User({
+      model: new Alistpress.Models.User()
     });
     
     this._swapView(userProfile);

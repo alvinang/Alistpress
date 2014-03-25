@@ -9,6 +9,5 @@ window.Alistpress.Collections.Themes = Backbone.Collection.extend({
     } else {
       return 0
     }
-  }
-  
+  }  
 });

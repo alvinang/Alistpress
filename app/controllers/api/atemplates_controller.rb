@@ -18,7 +18,7 @@ class Api::AtemplatesController < ApplicationController
   end
   
   def index
-    @atemplates = Atemplate.where(user_id: current_user.id)
+    @atemplates = Atemplate.where(user_id: current_user.id).concat(Atemplate.where(user_id: 1))
     
     respond_to do |format|
       format.html
@@ -27,7 +27,7 @@ class Api::AtemplatesController < ApplicationController
   end
   
   def show
-    @atemplate = Atemplate.find_by(user_id: current_user.id)
+    @atemplate = Atemplate.find(params[:id])
   end
   
   def update
