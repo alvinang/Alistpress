@@ -1,6 +1,6 @@
-window.Alistpress.Views.ThemesIndex = Backbone.View.extend({
+window.Alistpress.Views.ThemesSent = Backbone.View.extend({
   
-  template: JST['themes/index'],
+  template: JST['themes/sent'],
   
   render: function() {
     var renderedContent = this.template({

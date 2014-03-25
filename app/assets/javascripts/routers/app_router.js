@@ -10,7 +10,8 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
     "atemplates/new"      : "newAtemplate",
     "atemplates/:id"      : "showAtemplate",
     "atemplates/:id/edit" : "editAtemplate",
-    //show page for themes to see sent items
+    "themes"              : "indexTheme",
+    "themes/sent"         : "sentTheme",
     "themes/:id/"         : "showTheme",
     "themes/:id/edit"     : "editTheme"   
   },
@@ -53,6 +54,22 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
     });
     
     this._swapView(editAtemplate);
+  },
+  
+  indexTheme: function() {
+    var indexTheme = new Alistpress.Views.ThemesIndex({
+      collection: Alistpress.themes
+    });
+    
+    this._swapView(indexTheme);
+  },
+  
+  sentTheme: function() {
+    var sentTheme = new Alistpress.Views.ThemesSent({
+      collection: Alistpress.themes
+    });
+    
+    this._swapView(sentTheme);
   },
   
   showTheme: function(id) {
