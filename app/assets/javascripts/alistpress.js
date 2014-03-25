@@ -14,7 +14,7 @@ window.Alistpress = {
     this.sidebarView = new Alistpress.Views.SidebarIndex({});    
     $sidebarEl.html(this.sidebarView.render().$el);    
     
-    Backbone.history.start();        
+    Backbone.history.start();
   }
 };
 

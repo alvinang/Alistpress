@@ -2,7 +2,7 @@
 <html>
 <%= render partial: 'layouts/head' %>
 <body>
-  <% if !user_signed_in? %>  
+  <% if !user_signed_in? || current_page?('/users/edit') %>  
     <%= render partial: 'layouts/navbar' %>  
   <% end %>
   
