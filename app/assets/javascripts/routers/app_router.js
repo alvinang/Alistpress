@@ -6,6 +6,7 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   
   routes: {
     ""                    : "home",
+    "store"               : "store",
     "profile"             : "userProfile",
     "atemplates"          : "indexAtemplate",
     "atemplates/new"      : "newAtemplate",
@@ -23,6 +24,14 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
     });
     
     this._swapView(homeDashboard);
+  },
+  
+  store: function() {
+    var userProfile = new Alistpress.Views.UserProfile({
+      model: Alistpress.atemplates
+    });
+    
+    this._swapView(userProfile);
   },
   
   userProfile: function() {
