@@ -7,7 +7,6 @@
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
   Alistpress.atemplates = new Alistpress.Collections.Atemplates();
-  Alistpress.user = new Alistpress.Models.User();
   
   Alistpress.current_user_id = <%= current_user.id %>;
   Alistpress.current_user_email = "<%= current_user.email %>";
@@ -17,7 +16,6 @@ $(document).ready(function(){
     success: function() {
       Alistpress.themes = new Alistpress.Collections.Themes();
       Alistpress.themes.fetch();
-      Alistpress.user.fetch();
 
       Alistpress.initialize();    
     }
