@@ -1,4 +1,4 @@
-<div class="saved-templates col-xs-12">      
+<div class="saved-templates col-xs-12" style="padding-top: 45px">      
   <div class="box box-success">
     <div class="box-header">
       <h3 class="box-title">Sent History</h3>
@@ -19,8 +19,7 @@
         <tr>
           <td><%= theme.escape('recipient_email') %></td>
           <td><%= theme.escape('title') %></td>
-          <td><%= theme_date.toUTCString().slice(0, -4)
-     %></td>
+          <td><%= theme_date.toUTCString().slice(0, -4)%></td>
           <td>
             <button class="index-edit-theme">
               <a href="#/themes/<%= theme.escape('id') %>/edit">
