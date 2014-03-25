@@ -5,8 +5,8 @@
   <div class="col-md-12">
     <div class="nav-tabs-custom">
       <ul class="nav nav-tabs">
-      <% atemplates.forEach(function(atemplate){ %>
-        <li><a href="#<%= atemplate.escape('category') %>" data-toggle="tab"><%= atemplate.escape('category') %></a></li>       
+      <% categories.forEach(function(category){ %>
+        <li><a href="#<%= category %>" data-toggle="tab"><%= category %></a></li>       
       <% }) %>
       </ul>
             
@@ -14,6 +14,25 @@
         
         <% atemplates.forEach(function(atemplate){ %>        
         <div class="tab-pane active" id="<%= atemplate.escape('category') %>">
+          <div class="row">
+            <div class="box box-solid col-lg-3">
+              <div class="box-header">
+                <h3 class="box-title">Default Solid Box</h3>
+                <div class="box-tools pull-right">
+                  <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                  <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                </div>
+              </div>
+              <div class="box-body">
+                Box class: <code>.box.box-solid</code>
+                <p>
+                  amber, microbrewery abbey hydrometer, brewpub ale lauter tun saccharification oxidized barrel.
+                  berliner weisse wort chiller adjunct hydrometer alcohol aau!
+                  sour/acidic sour/acidic chocolate malt ipa ipa hydrometer.
+                </p>
+              </div>
+            </div>
+          </div>                  
           <p>
             <a href="#/atemplates/<%= atemplate.id %>"><%= atemplate.escape('description') %></a><br>
             <a href="#/atemplates/<%= atemplate.id %>/edit">Edit</a>
