@@ -5,7 +5,8 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   },
   
   routes: {
-    "": "index",
+    ""                    : "home",
+    "atemplates"          : "indexAtemplate",
     "atemplates/new"      : "newAtemplate",
     "atemplates/:id"      : "showAtemplate",
     "atemplates/:id/edit" : "editAtemplate",
@@ -14,7 +15,15 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
     "themes/:id/edit"     : "editTheme"   
   },
   
-  index: function() {
+  home: function() {
+    var homeDashboard = new Alistpress.Views.DashboardHome({
+      collection: Alistpress.atemplates
+    });
+    
+    this._swapView(homeDashboard);
+  },
+  
+  indexAtemplate: function() {
     var indexAtemplate = new Alistpress.Views.AtemplatesIndex({
       collection: Alistpress.atemplates
     });

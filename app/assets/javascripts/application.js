@@ -11,6 +11,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.serializeJSON
+//= require jquery.ui.sortable
 //= require bootstrap
 //= require bootstrap-wysihtml5/b3
 //= require underscore
