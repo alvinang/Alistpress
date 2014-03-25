@@ -6,35 +6,37 @@
     <div class="nav-tabs-custom">
       <ul class="nav nav-tabs">
       <% categories.forEach(function(category){ %>
-        <li><a href="#<%= category %>" data-toggle="tab"><%= category %></a></li>       
+        <li><a href="#<%= category.replace(/ +/g, "") %>" data-toggle="tab"><%= category %></a></li>       
       <% }) %>
       </ul>
             
       <div class="tab-content">
         
-        <% atemplates.forEach(function(atemplate){ %>        
-        <div class="tab-pane active" id="<%= atemplate.escape('category') %>">
+        <% _.each(categories, function(category){ %>        
+        <div class="tab-pane" id="<%= category.replace(/ +/g, "") %>">
           <div class="row">
-            <div class="box box-solid col-lg-3">
-              <div class="box-header">
-                <h3 class="box-title">Default Solid Box</h3>
-                <div class="box-tools pull-right">
-                  <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                  <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                </div>
-              </div>
-              <div class="box-body">
-                <p>
-                </p>
-              </div>
+            <div class="box box-solid">
+            <% var allTemplates = _.filter(atemplates.models, function(t) { return t.get('category') === category }) %>  
+              
+            <% _.each(allTemplates, function(atemplate){ %> 
+              <a href="#/atemplates/<%= atemplate.escape('id') %>">
+                <div class="col-lg-4">
+                  <div class="box-header">
+                    <h3 class="box-title"><%= atemplate.escape('title') %></h3>
+                  </div>
+                  <div class="box-body">
+                    <p>
+                      <a href="#/atemplates/<%= atemplate.escape('id') %>"><%= atemplate.escape('description') %></a><br>
+                      <a href="#/atemplates/<%= atemplate.escape('id') %>/edit">Edit</a>
+                    </p>
+                  </div>                
+                </div> 
+              </a>             
+            <% }); %>                                
             </div>
           </div>                  
-          <p>
-            <a href="#/atemplates/<%= atemplate.id %>"><%= atemplate.escape('description') %></a><br>
-            <a href="#/atemplates/<%= atemplate.id %>/edit">Edit</a>
-          </p>
         </div>
-        <% }) %>        
+        <% }); %>
       </div>
     </div>
   </div>
@@ -43,3 +45,10 @@
     <a href="#/atemplates/new" class='create-template'>Create new template</a>  
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('ul > li:first-child').addClass('active');
+    $('.tab-content > div:first-child').addClass('active');
+  });
+</script>
