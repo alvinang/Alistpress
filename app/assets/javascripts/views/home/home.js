@@ -4,7 +4,8 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
   
   render: function() {
     var renderedContent = this.template({
-      
+      atemplates: this.collection
+      // sentThemes: Alistpress.Collections.Themes.countSent()
     });    
     
     this.$el.html(renderedContent);
