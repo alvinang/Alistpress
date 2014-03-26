@@ -75,17 +75,23 @@ $(document).ready(function(){
             
             if (keyCode == 9){
               event.preventDefault(); 
+              var foundText = false;
 
-              for (var i = 0; i < numLoops; i++) {     
+              for (var i = 0; i < numLoops; i++) {  
+                if (foundText) {
+                  break;
+                };
+                                               
                 var content = $(this).children()[i];           
                 var sentence = content.innerHTML;                
                 var _match;
-                var reg = new RegExp(/\{{(.*?)\}}/g);
+                var reg = new RegExp(/\{{(.*?)\}}/);
                                 
                 var allNodes = content.childNodes.length;
                 var thisNode;
                 
                 if (match = reg.exec(sentence)) { 
+                  console.log(match);
                   _match = match; 
                 }               
                 
@@ -98,7 +104,8 @@ $(document).ready(function(){
                 
                     var selection = document.getSelection();
                     selection.removeAllRanges();
-                    selection.addRange(range);                        
+                    selection.addRange(range);  
+                    foundText = true;  
                     break;              
                   }                 
                 };                                  
