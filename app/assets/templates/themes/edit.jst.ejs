@@ -43,37 +43,3 @@
     <a href="#/">Back</a>
   </div>
 </div>
-
-<script type="text/javascript" charset="utf-8">
-$(document).ready(function(){
-  
-  $('#wysihtml5-title').each(function(i, elem) {
-    $(elem).wysihtml5({
-    	"font-styles": false,
-    	"emphasis": false,
-    	"lists": false, 
-    	"link": false, 
-    	"image": false, 
-    	"color": false 
-    });
-  });
-
-  $('#wysihtml5').each(function(i, elem) {
-    $(elem).wysihtml5({
-    	"font-styles": true,
-    	"emphasis": true,
-    	"lists": true, 
-    	"link": true, 
-      "html": true,
-    	"image": true, 
-    	"color": true 
-    }); 
-  });
-  
-  $('.send-theme').click(function () {
-     var btn = $(this)
-     btn.button('loading')
-   });
-  
-});
-</script>

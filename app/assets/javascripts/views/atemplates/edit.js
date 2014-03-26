@@ -8,8 +8,8 @@ window.Alistpress.Views.AtemplateEdit = Backbone.View.extend({
     "click button.delete-template": "deleteTemplate"
   },
   
-  textEditor: function() {
-    $('.home-email').each(function(i, elem) {
+  addTextEditor: function() {
+    this.$el.find('#wysihtml5').each(function(i, elem) {
       $(elem).wysihtml5({
       	"font-styles": true,
       	"emphasis": true,
@@ -27,13 +27,14 @@ window.Alistpress.Views.AtemplateEdit = Backbone.View.extend({
       atemplate: this.model
     });
     
-    this.$el.html(this.textEditor());
     this.$el.html(renderedContent);
+    this.addTextEditor();
     return this;
   },
   
   updateTemplate: function(event) {
     event.preventDefault();
+    
     var params = $(event.currentTarget).serializeJSON().atemplate;
     params.user_id = Alistpress.current_user_id;
     params.id = this.model.id;
@@ -45,7 +46,7 @@ window.Alistpress.Views.AtemplateEdit = Backbone.View.extend({
         Backbone.history.navigate("#/atemplates", { trigger: true });        
       },
       error: function(){
-        alert("didn't save.....");
+        alert("Save unsuccessful, please contact admin");
       }
     });
   },

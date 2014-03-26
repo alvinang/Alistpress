@@ -1,10 +1,13 @@
-<h1>You sent this email <%= theme.escape('updated_at') %></h1>
-<p>The following are the contents of your email:</p>
-<hr>
-
-<h3><%= theme.escape('title') %></h3>
-<div class="sent-email col-xs-10 col-offset-1">
-  <%= theme.escape('content') %>
+<div class="col-lg-12" style="padding: 30px 45px 0 30px">
+  <div class="box box-primary">
+    <div class="box-header">
+      <h3 class="box-title">Subject: <%= theme.escape('title') %></h3>
+    </div>
+    <div class="box-body pad">
+      <%= theme.get('content') %>      
+    </div>
+    <div class="box-footer">
+      <strong>Sent on: <%= theme.escape('updated_at') %></strong>      
+    </div>
+  </div>
 </div>
-
-<a href="#/">Back to Dashboard</a>

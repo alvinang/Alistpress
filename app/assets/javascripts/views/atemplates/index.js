@@ -8,13 +8,11 @@ window.Alistpress.Views.AtemplatesIndex = Backbone.View.extend({
   },
   
   addActive: function() {
-    $(document).ready(function(){
-      $('.tab-content > div:first-child').addClass('active');          
-      $('ul > li:first-child').addClass('active');      
-    });
+    this.$el.find('.tab-content > div:first-child').addClass('active');          
+    this.$el.find('ul > li:first-child').addClass('active');      
   },
   
-  getCategories: function() {
+  _getCategories: function() {
     var atemplates = this.collection;
     
     var result = [];
@@ -35,11 +33,11 @@ window.Alistpress.Views.AtemplatesIndex = Backbone.View.extend({
   render: function() {
     var renderedContent = this.template({
       atemplates: this.collection,
-      categories: this.getCategories()    
+      categories: this._getCategories()    
     });
     
     this.$el.html(renderedContent);
-    this.$el.html(this.addActive());
+    this.addActive();
     return this;
   }
   

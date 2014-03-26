@@ -6,8 +6,8 @@ window.Alistpress.Views.AtemplateNew = Backbone.View.extend({
     "submit form": "submit"
   },  
   
-  textEditor: function() {
-    $('.home-email').each(function(i, elem) {
+  addTextEditor: function() {
+    $('#wysihtml5').each(function(i, elem) {
       $(elem).wysihtml5({
       	"font-styles": true,
       	"emphasis": true,
@@ -32,6 +32,7 @@ window.Alistpress.Views.AtemplateNew = Backbone.View.extend({
   
   submit: function(event) {
     event.preventDefault();
+    
     var params = $(event.currentTarget).serializeJSON().atemplate;
     params.user_id = Alistpress.current_user_id;
     var template = new Alistpress.Models.Atemplate(params);
@@ -40,9 +41,6 @@ window.Alistpress.Views.AtemplateNew = Backbone.View.extend({
       success: function() {
         Alistpress.atemplates.add(template);
         Backbone.history.navigate("#/atemplates", { trigger: true });
-      }, 
-      error: function() {
-        alert("didn't save yo");
       }
     });
   }
