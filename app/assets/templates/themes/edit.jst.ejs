@@ -1,31 +1,48 @@
-<form class="jumbotron col-xs-10 col-xs-offset-1">
-  
-  <p>
-    <input name="theme[recipient_email]" type="email" placeholder="Email to:" value="<%= theme.escape('recipient_email') %>">
-  </p>
-  
-  <p>
-    <input name="theme[sender_email]" type="email" placeholder="Email from:" value="<%= theme.escape('sender_email') %>" id="t_email">
-  </p>
-  
-  <p class="theme-title">
-    <input id="wysihtml5-title" type="text" value="<%= theme.escape('title') %>" name="theme[title]">    
-  </p>
+<div class="col-lg-11" style="padding: 30px 45px 0 30px">
+  <div class="box box-primary">
+    
+    <div class="box-header">
+      <h3 class="box-title col-lg-offset-2" style="margin-bottom: 15px;">Edit Email & Send! :)</h3>
+      <button class="send-theme btn btn-success pull-right" style="border-radius:0;margin:15px;" type="submit" data-loading-text="Sending...">Send</button>
+    </div>
+    
+    <div class="box-body pad">
+      <form>
+        
+        <div class="form-group col-lg-6" style="float:none;">
+          <div style="margin-bottom:15px">
+            <input type="email" name="theme[recipient_email]" class="form-control" placeholder="Email to:" value="<%= theme.escape('recipient_email') %>" autofocus>
+          </div>
+        </div>
+        
+        <div class="form-group col-lg-6" style="float:none;">
+          <div style="margin-bottom:15px">
+            <input type="email" name="theme[sender_email]" class="form-control" placeholder="Subject" value="<%= Alistpress.current_user_email %>" id="t_email">
+          </div>
+        </div>        
 
-  <p class="theme-content">
-    <textarea id="wysihtml5" class="col-xs-12" style="height: 200px;" placeholder="Enter Content" name="theme[content]">
-      <%= theme.escape('content') %>
-    </textarea>
-  </p>
-  
-  <p>
-    <button class="save-theme btn btn-primary pull-right" style="border-radius:0;" type="submit">Update</button>
-  </p>  
-<!-- </div> -->
-  <a href="#/" class="btn btn-default">Back</a>
-</form>
-
-<button class="send-theme btn btn-success pull-right" style="border-radius:0;" type="submit" data-loading-text="Sending...">Send</button>
+        <div class="form-group" style="padding-left:15px;">
+          <div class="theme-title" style="margin-bottom:15px">
+            <input name="theme[title]" class="form-control" id="wysihtml5-title" value="<%= theme.escape('title') %>">
+          </div>
+        </div>               
+        
+        <div class="form-group" style="padding-left:15px;">
+          <div class="theme-content">
+            <textarea name="theme[content]" class="form-control" id="wysihtml5" rows="25">
+               <%= theme.escape('content') %>
+            </textarea>
+          </div>
+        </div>
+        
+        <div class="box-footer">
+          <button type="submit" class="save-theme btn btn-primary col-lg-offset-11" style="border-radius:0;">Update</button>
+        </div> 
+      </form>
+    </div>
+    <a href="#/">Back</a>
+  </div>
+</div>
 
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
@@ -50,18 +67,11 @@ $(document).ready(function(){
     	"image": true, 
     	"color": true,
       "events": {
-        "load": function() {
-          alert('i just got loaded');
-        },
         "focus:textarea": function() {
         }
       } 
     }); 
   });
-  
-  // $('.theme-content > input[type="hidden"]').remove();
-  // $('.theme-content > iframe').remove();
-  // $('.theme-content > textarea').val($.trim($('.theme-content > textarea').val()));    
   
   $('.send-theme').click(function () {
      var btn = $(this)

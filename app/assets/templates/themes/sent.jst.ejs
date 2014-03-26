@@ -21,12 +21,7 @@
           <td><%= theme.escape('title') %></td>
           <td><%= theme_date.toUTCString().slice(0, -4)%></td>
           <td>
-            <button class="index-edit-theme">
-              <a href="#/themes/<%= theme.escape('id') %>/edit">
-                Edit
-              </a>
-            </button>
-            <button class="index-delete-theme" data-id="<%= theme.escape('id') %>">Delete</button>
+            <button class="index-delete-theme btn btn-danger btn-xs" data-id="<%= theme.escape('id') %>">Delete</button>
           </td>
         </tr>
           <% } %>  

@@ -1,45 +1,55 @@
-<h2>Edit Template: <%= atemplate.escape('title') %></h2><br>
-
-<button class='delete-template btn btn-xs btn-danger pull-right'>Delete</button> 
-
-<form class="form-horizontal edit-atemplate">
-  <input type="hidden" name="atemplate[user_id]">
-  <div class="form-group">
-    <label for="title" class="control-label col-xs-2">Title</label>
-    <div class="col-xs-8">
-      <input type="text" name="atemplate[title]" class="form-control" placeholder="Title" id="title" value="<%= atemplate.escape('title') %>">
+<div class="col-lg-12" style="padding: 30px 45px 0 30px">
+  <div class="box box-warning">
+    
+    <div class="box-header">
+      <h3 class="box-title col-lg-offset-2" style="margin-bottom: 15px;">Edit Template</h3>
     </div>
-  </div>
+    
+    <div class="box-body pad">      
+      <form class="form-horizontal edit-atemplate">
+        <input type="hidden" name="atemplate[user_id]">
+        <div class="form-group">
+          <label for="title" class="control-label col-lg-2">Title</label>
+          <div class="col-lg-9">
+            <input type="text" name="atemplate[title]" class="form-control" placeholder="Title" id="title" value="<%= atemplate.escape('title') %>">
+          </div>
+        </div>
 
-  <div class="form-group">
-    <label for="wysihtml5" class="col-xs-2 control-label">Template</label>
-    <div class="col-xs-8">
-      <textarea name="atemplate[content]" class="form-control" id="wysihtml5" rows="20" placeholder="Template"><%= atemplate.escape('content') %></textarea>
-    </div>
-  </div>
+        <div class="form-group">
+          <label for="wysihtml5" class="col-lg-2 control-label">Template</label>
+          <div class="col-lg-9">
+            <textarea name="atemplate[content]" class="form-control" id="wysihtml5" rows="20" placeholder="Template"><%= atemplate.escape('content') %></textarea>
+          </div>
+        </div>
   
-  <div class="form-group">
-    <label for="description" class="control-label col-xs-2">Description</label>
-    <div class="col-xs-8">
-      <input type="text" name="atemplate[description]" class="form-control" placeholder="Template Description" id="description" value="<%= atemplate.escape('description') %>">
-    </div>
-  </div>
+        <div class="form-group">
+          <label for="description" class="control-label col-lg-2">Description</label>
+          <div class="col-lg-9">
+            <input type="text" name="atemplate[description]" class="form-control" placeholder="Template Description" id="description" value="<%= atemplate.escape('description') %>">
+          </div>
+        </div>
   
-  <div class="form-group">
-    <label for="category" class="control-label col-xs-2">Category</label>
-    <div class="col-xs-8">
-      <input type="text" name="atemplate[category]" class="form-control" placeholder="Category" id="category" value="<%= atemplate.escape('category') %>">
-    </div>
+        <div class="form-group">
+          <label for="category" class="control-label col-lg-2">Category</label>
+          <div class="col-lg-9">
+            <input type="text" name="atemplate[category]" class="form-control" placeholder="Category" id="category" value="<%= atemplate.escape('category') %>">
+          </div>
+        </div>
+        
+        <div class="box-footer">
+            <button type="submit" class="btn btn-primary col-lg-offset-2">Update Template</button>
+        </div>
+      </form>      
+    </div>    
   </div>
+</div>
 
-  <div class="form-group">
-    <div class="col-xs-offset-2 col-xs-10">
-      <button type="submit" class="btn btn-default">Update Template</button>
-    </div>
-  </div>
-</form>
+<hr>
 
-<a href="#/">Back</a>
+<div class="col-lg-offset-1">
+  <a href="#/" class="pull-left">Back</a>
+  <button class='delete-template btn btn-xs btn-danger col-lg-offset-10'>Delete</button>   
+</div>
 
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){

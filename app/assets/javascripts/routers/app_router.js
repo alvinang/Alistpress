@@ -6,15 +6,14 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   
   routes: {
     ""                    : "home",
-    "store"               : "store",
-    "profile"             : "userProfile",
+    "premium"             : "premium",
     "atemplates"          : "indexAtemplate",
     "atemplates/new"      : "newAtemplate",
     "atemplates/:id"      : "showAtemplate",
     "atemplates/:id/edit" : "editAtemplate",
     "themes"              : "indexTheme",
     "themes/sent"         : "sentTheme",
-    "themes/:id/"         : "showTheme",
+    "themes/:id"          : "showTheme",
     "themes/:id/edit"     : "editTheme"   
   },
   
@@ -25,21 +24,13 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
     
     this._swapView(homeDashboard);
   },
-  
-  store: function() {
-    var userProfile = new Alistpress.Views.UserProfile({
+  // Todo
+  premium: function() {
+    var store = new Alistpress.Views.UserProfile({
       model: Alistpress.atemplates
     });
     
-    this._swapView(userProfile);
-  },
-  
-  userProfile: function() {
-    var userProfile = new Alistpress.Views.User({
-      model: new Alistpress.Models.User()
-    });
-    
-    this._swapView(userProfile);
+    this._swapView(store);
   },
   
   indexAtemplate: function() {
@@ -98,11 +89,11 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
     this._swapView(showTheme);
   },
   
-  editTheme: function(id) {
+  editTheme: function(id) {    
     var editTheme = new Alistpress.Views.ThemeEdit({
       model: Alistpress.themes.get(id)
     });
-    
+
     this._swapView(editTheme);
   },
   

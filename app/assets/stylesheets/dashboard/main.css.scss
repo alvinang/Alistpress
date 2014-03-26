@@ -10,7 +10,7 @@
   background-color: #f9f9f9;
   min-height: 1000px;
   padding-top: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .home-box {
@@ -105,6 +105,11 @@ form {
   }
 }
 
+.click-box {
+  cursor: pointer !important;
+  &:hover { cursor: pointer !important; }
+}
+
 @keyframes tansformAnimation {
   from { font-size: 90px; }
   to { font-size: 100px; }
@@ -190,8 +195,7 @@ form {
   margin: 0;
   font-size: 20px;
   font-weight: 400;
-  float: left;
-  cursor: default;
+  float: left;  
 }
 .box .box-header a {
   color: #444;

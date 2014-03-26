@@ -50,13 +50,6 @@ template5 = Atemplate.create(title: "Updates on {{Company Name}}",
   user_id: 1
 )
 
-template6 = Atemplate.create(title: "Here's the info you requested about {{product_name}}...", 
-  content: "Hey {{first_name}},\r\n<br><br>Here's the info I promised you about {{Company Name}}:\r\n<br><ol><li>I've attached a short PDF that gives an overview about {{product name}}.</li><li>Also, if you'd like to check out {{product name}}, here are two QUICK ways to take it for a test\r\ndrive: 1) Check out our demo: {{link to demo}} 2) Check out our demo video: {{link to demo\r\nvideo}}.</li></ol>Once you've checked out the PDF and the Demo, I'd love to get on the phone with you or meet in person to tell you more about the business. <br><br>Please let me know TWO times that work for you and I'll schedule it. <br><br>Thanks in advance, <br>{{link to your product with tag line}}<br><br>" , 
-  category: "Pitch Emails", 
-  description: "Initial Connection to Investors", 
-  user_id: 1
-)
-
 template7 = Atemplate.create(title: "Congrats on the {{product release/great quarter/NYT coverage/financing/new customer}} {{THE MORE SPECIFIC THE BETTER}}", 
   content: "Dear {{first_name}},\r\n<br><br>{{You and your team have really accomplished something. The feature/product/press mention yesterday is\r\nmaking a big impression among the people I talk to. I wanted to reach out and say congratulations.}}<br><br>{{My company has been doing pretty well also. We recently announced [customer/competitor] as a client\r\nfor our [product]. Maybe something like this could help you continue your impressive momentum?}}<br><br>{{I’d like to follow up about this with a quick phone call. We can cover the important issues in 20 minutes.\r\nCan I call you next Tuesday at 8am EST?}}<br><br>All the best,\r\n<br>{{Matthew}}" , 
   category: "Sales Emails", 
