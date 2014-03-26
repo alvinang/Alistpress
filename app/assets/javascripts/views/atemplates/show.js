@@ -35,7 +35,7 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
     params.template_id = this.model.id;
     
     var template = new Alistpress.Models.Theme(params);  
-          
+    debugger
     template.save({}, {
       success: function(){
         Alistpress.themes.add(template);             

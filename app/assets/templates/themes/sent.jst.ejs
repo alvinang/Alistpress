@@ -5,28 +5,24 @@
     </div>
     <div class="box-body table-responsive no-padding">
       <table class="table table-hover">
-        <tbody><tr>
-          <th>Recipient</th>
-          <th>Title</th>
-          <th>Date Saved</th>
-          <th>Action</th>
-        </tr>
-        <% themes.forEach(function(theme){ %>
-
-          <% if (theme.escape('sent') === 'true') { %> 
-            <% var theme_date = new Date(Date.parse(theme.escape('updated_at'))) %>
-            
-        <tr>
-          <td><%= theme.escape('recipient_email') %></td>
-          <td><%= theme.escape('title') %></td>
-          <td><%= theme_date.toUTCString().slice(0, -4)%></td>
-          <td>
-            <button class="index-delete-theme btn btn-danger btn-xs" data-id="<%= theme.escape('id') %>">Delete</button>
-          </td>
-        </tr>
-          <% } %>  
-        <% }); %>        
-      </tbody></table>
+        <tbody>
+          <tr>
+            <th>Recipient</th>
+            <th>Title</th>
+            <th>Date Sent</th>
+          </tr>
+          <% themes.forEach(function(theme){ %>
+            <% if (theme.escape('sent') === 'true') { %> 
+              <% var theme_date = new Date(Date.parse(theme.escape('updated_at'))) %>            
+                <tr>
+                  <td><%= theme.escape('recipient_email') %></td>
+                  <td><%= theme.escape('title') %></td>
+                  <td><%= theme_date.toUTCString().slice(0, -4)%></td>
+                </tr>              
+            <% } %>  
+          <% }); %>        
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

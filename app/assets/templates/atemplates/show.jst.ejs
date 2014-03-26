@@ -70,9 +70,9 @@ $(document).ready(function(){
       "events": {
         "focus": function() {
           $('.wysihtml5-sandbox').contents().find('body').on("keydown", function(event) {          
-            var numLoops = _.size($(this).children());                        
+            var numLoops = _.size($(this).contents());                        
             var keyCode = event.keyCode;
-            debugger
+            
             if (keyCode == 9){
               event.preventDefault(); 
               

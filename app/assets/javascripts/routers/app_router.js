@@ -90,8 +90,9 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   },
   
   editTheme: function(id) {    
+    debugger
     var editTheme = new Alistpress.Views.ThemeEdit({
-      model: Alistpress.themes.get(id)
+      model: Alistpress.themes.getOrFetch(id)
     });
 
     this._swapView(editTheme);
