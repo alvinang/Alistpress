@@ -11,7 +11,7 @@ window.Alistpress.Views.ThemeEdit = Backbone.View.extend({
     var renderedContent = this.template({
       theme: this.model
     });
-    
+        
     this.$el.html(renderedContent);
     return this;
   },

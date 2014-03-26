@@ -51,7 +51,7 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   
   showAtemplate: function(id) {
     var showAtemplate = new Alistpress.Views.AtemplateShow({
-      model: Alistpress.atemplates.get(id)
+      model: Alistpress.atemplates.getOrFetch(id)
     });
     
     this._swapView(showAtemplate);
@@ -59,7 +59,7 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   
   editAtemplate: function(id) {
     var editAtemplate = new Alistpress.Views.AtemplateEdit({
-      model: Alistpress.atemplates.get(id)
+      model: Alistpress.atemplates.getOrFetch(id)
     });
     
     this._swapView(editAtemplate);
@@ -83,18 +83,17 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   
   showTheme: function(id) {
     var showTheme = new Alistpress.Views.ThemeShow({
-      model: Alistpress.themes.get(id)
+      model: Alistpress.themes.getOrFetch(id)
     });
     
     this._swapView(showTheme);
   },
   
-  editTheme: function(id) {    
-    debugger
+  editTheme: function(id) {      
     var editTheme = new Alistpress.Views.ThemeEdit({
       model: Alistpress.themes.getOrFetch(id)
     });
-
+    
     this._swapView(editTheme);
   },
   

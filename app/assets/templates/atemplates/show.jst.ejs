@@ -70,12 +70,12 @@ $(document).ready(function(){
       "events": {
         "focus": function() {
           $('.wysihtml5-sandbox').contents().find('body').on("keydown", function(event) {          
-            var numLoops = _.size($(this).contents());                        
+            var numLoops = _.size($(this).children());                        
             var keyCode = event.keyCode;
             
             if (keyCode == 9){
               event.preventDefault(); 
-              
+
               for (var i = 0; i < numLoops; i++) {     
                 var content = $(this).children()[i];           
                 var sentence = content.innerHTML;                
@@ -99,7 +99,6 @@ $(document).ready(function(){
                     var selection = document.getSelection();
                     selection.removeAllRanges();
                     selection.addRange(range);                        
-                    debugger
                     break;              
                   }                 
                 };                                  

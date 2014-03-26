@@ -46,7 +46,5 @@ window.Alistpress.Views.AtemplateEdit = Backbone.View.extend({
         alert("Delete unsuccessful, please contact admin");
       }
     });    
-
-  }
-  
+  }  
 });

@@ -18,7 +18,9 @@
         <div class="form-group">
           <label for="wysihtml5" class="col-lg-2 control-label">Template</label>
           <div class="col-lg-9">
-            <textarea name="atemplate[content]" class="form-control" id="wysihtml5" rows="20" placeholder="Template"><%= atemplate.escape('content') %></textarea>
+            <textarea name="atemplate[content]" class="form-control" id="wysihtml5" rows="20" placeholder="Template">
+              <%= atemplate.escape('content') %>
+            </textarea>
           </div>
         </div>
   
@@ -51,7 +53,7 @@
   <button class='delete-template btn btn-xs btn-danger col-lg-offset-10'>Delete</button>   
 </div>
 
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
 $(document).ready(function(){
   
   $('#wysihtml5').each(function(i, elem) {
@@ -67,4 +69,5 @@ $(document).ready(function(){
   });
 
 });
+
 </script>

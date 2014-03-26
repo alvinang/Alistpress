@@ -15,9 +15,11 @@ $(document).ready(function(){
   Alistpress.atemplates.fetch({
     success: function() {
       Alistpress.themes = new Alistpress.Collections.Themes();
-      Alistpress.themes.fetch();
-
-      Alistpress.initialize();    
+      Alistpress.themes.fetch({
+        success: function() {
+          Alistpress.initialize();                    
+        }
+      });
     }
   });
   

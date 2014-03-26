@@ -11,20 +11,23 @@ window.Alistpress.Collections.Themes = Backbone.Collection.extend({
     }
   },
   
-  getOrFetch: function (id) {
+  getOrFetch: function (id, callback) {
     var model;
-    var themes = this;
-
-    if (model = this.get(id)) {
-      model.fetch();
-      return model;
+    callback = callback || (function () {});
+    
+    if (this.get(id)) {
+      model = this.get(id);
+      model.fetch({success: callback});
     } else {
-      model = new Alistpress.Models.Theme({ id: id });
-      model.fetch({
-        success: function () { themes.add(model) }
-      });
-      return model;
+      model = new this.model({id: id});
+      var that = this;
+      model.fetch({success: function (model) {
+        that.add(model);
+        callback(model);
+      }})
     }
+    
+    return model;
   }
     
 });
