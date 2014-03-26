@@ -83,20 +83,20 @@
       </div>
     </div>
     <div class="box-body">
-      <form action="#" method="post">
+      <form>
         <div class="form-group">
-          <input type="email" class="form-control" name="name[recipient_email]" placeholder="Email to:"/>
+          <input type="email" class="form-control" name="theme[recipient_email]" placeholder="Email to:"/>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" name="name[sender_email]" placeholder="Subject"/>
+          <input type="text" class="form-control" name="theme[subject]" placeholder="Subject"/>
         </div>
         <div>
-          <textarea class="home-email" placeholder="Message" id="wysihtml5" name="name[content]"></textarea>
+          <textarea class="home-email" placeholder="Message" id="wysihtml5" name="theme[content]"></textarea>
         </div>
       </form>
     </div>
     <div class="box-footer clearfix">
-      <button class="pull-right btn btn-default" id="sendEmail">Send <i class="fa fa-arrow-circle-right"></i></button>
+      <button class="pull-right btn btn-default" id="sendEmail" data-loading-text="Sending...">Send <i class="fa fa-arrow-circle-right"></i></button>
     </div>
   </div>
 </section>
