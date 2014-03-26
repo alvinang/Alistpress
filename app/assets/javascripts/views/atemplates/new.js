@@ -6,11 +6,26 @@ window.Alistpress.Views.AtemplateNew = Backbone.View.extend({
     "submit form": "submit"
   },  
   
+  textEditor: function() {
+    $('.home-email').each(function(i, elem) {
+      $(elem).wysihtml5({
+      	"font-styles": true,
+      	"emphasis": true,
+      	"lists": true, 
+      	"html": true, 
+      	"link": true,
+      	"image": true,
+      	"color": false
+      }); 
+    });
+  },
+  
   render: function() {
     var renderedContent = this.template({
       atemplate: this.model
     });
     
+    this.$el.html(textEditor);
     this.$el.html(renderedContent);
     return this;
   },

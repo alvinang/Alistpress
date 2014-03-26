@@ -4,7 +4,14 @@ window.Alistpress.Views.AtemplatesIndex = Backbone.View.extend({
   template: JST['atemplates/index'],
   
   initialize: function() {
-    this.listenTo(Alistpress.atemplates, "sync add remove change", this.render);
+    this.listenTo(Alistpress.atemplates, "sync add remove change", this.render); 
+  },
+  
+  addActive: function() {
+    $(document).ready(function(){
+      $('.tab-content > div:first-child').addClass('active');          
+      $('ul > li:first-child').addClass('active');      
+    });
   },
   
   getCategories: function() {
@@ -32,6 +39,7 @@ window.Alistpress.Views.AtemplatesIndex = Backbone.View.extend({
     });
     
     this.$el.html(renderedContent);
+    this.$el.html(this.addActive());
     return this;
   }
   

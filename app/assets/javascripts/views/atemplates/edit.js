@@ -8,11 +8,26 @@ window.Alistpress.Views.AtemplateEdit = Backbone.View.extend({
     "click button.delete-template": "deleteTemplate"
   },
   
+  textEditor: function() {
+    $('.home-email').each(function(i, elem) {
+      $(elem).wysihtml5({
+      	"font-styles": true,
+      	"emphasis": true,
+      	"lists": true, 
+      	"html": true, 
+      	"link": true,
+      	"image": true,
+      	"color": false
+      }); 
+    });
+  },
+  
   render: function() {
     var renderedContent = this.template({
       atemplate: this.model
     });
     
+    this.$el.html(this.textEditor());
     this.$el.html(renderedContent);
     return this;
   },
@@ -40,7 +55,7 @@ window.Alistpress.Views.AtemplateEdit = Backbone.View.extend({
     
     this.model.destroy({
       success: function() {
-        Backbone.history.navigate("", { trigger: true });        
+        Backbone.history.navigate("#/atemplates", { trigger: true });        
       }, 
       error: function() {
         alert("Delete unsuccessful, please contact admin");

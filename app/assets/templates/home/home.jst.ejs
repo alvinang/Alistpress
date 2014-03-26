@@ -103,7 +103,7 @@
 
 <section class="col-lg-6 connectedSortable">
   <div class="box box-primary">
-    <div class="box-header">
+    <div class="box-header" style="cursor: move;">
       <i class="ion ion-clipboard"></i>
       <h3 class="box-title">To Do List</h3>
     </div>
@@ -194,38 +194,3 @@
     </div>
   </div>
 </section>
-
-<script type="text/javascript">
-
-  $(document).ready(function(){  
-    $('.home-email').each(function(i, elem) {
-      $(elem).wysihtml5({
-      	"font-styles": true,
-      	"emphasis": true,
-      	"lists": true, 
-      	"html": true, 
-      	"link": true,
-      	"image": true,
-      	"color": false
-      }); 
-    });
-  });
-
-  $(".connectedSortable").sortable({
-      placeholder: "sort-highlight",
-      connectWith: ".connectedSortable",
-      handle: ".box-header, .nav-tabs",
-      forcePlaceholderSize: true,
-      zIndex: 999999
-  }).disableSelection();
-
-  $(".box-header, .nav-tabs").css("cursor","move");
-
-  $(".todo-list").sortable({
-      placeholder: "sort-highlight",
-      handle: ".handle",
-      forcePlaceholderSize: true,
-      zIndex: 999999
-  }).disableSelection();
-  
-</script>
