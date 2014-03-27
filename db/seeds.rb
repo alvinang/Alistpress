@@ -84,3 +84,50 @@ template11 = Atemplate.create(title: "We Messed Up",
   description: "Server Downtime Email", 
   user_id: 1
 )
+
+task = Todo.create(task: "Send weekly report to Mark Z", 
+  completed: false, 
+  position: 0, 
+  user_id: 1, 
+  created_at: "2014-03-24 07:46:12"
+)
+
+task2 = Todo.create(task: "<------ Contact Alvin for an interview", 
+  completed: false, 
+  position: 1, 
+  user_id: 1, 
+  created_at: "2014-03-25 07:46:12"
+)
+
+task2 = Todo.create(task: "Send weekly stats to keep team motivated", 
+  completed: false, 
+  position: 2, 
+  user_id: 1, 
+  created_at: "2014-03-26 07:46:12"
+)
+
+task3 = Todo.create(task: "Investor monthly update", 
+  completed: false, 
+  position: 3, 
+  user_id: 1, 
+  created_at: "2014-03-27 07:46:12"
+)
+
+task4 = Todo.create(task: "Email one guest blog a week", 
+  completed: false, 
+  position: 4, 
+  user_id: 1
+)
+
+task5 = Todo.create(task: "Check out Alvin's Portfolio", 
+  completed: false, 
+  position: 5, 
+  user_id: 1
+)
+
+
+
+
+
+
+
