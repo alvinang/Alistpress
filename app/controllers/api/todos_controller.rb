@@ -1,4 +1,4 @@
-class Api::TodosController < ApplicationControllers  
+class Api::TodosController < ApplicationController
   before_action :authenticate_user!
   
   def create
