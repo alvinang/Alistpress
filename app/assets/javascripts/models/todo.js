@@ -1,0 +1,1 @@
+window.Alistpress.Models.Todo = Backbone.Model.extend({});

@@ -23,6 +23,7 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
   },
   
   addTextEditorContent: function() {
+    var that = this;
     this.$el.find('#wysihtml5').each(function(i, elem) {
       $(elem).wysihtml5({
       	"font-styles": true,
@@ -33,50 +34,90 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
       	"image": true,
       	"color": false,
         "events": {
-          "focus": function() {
-            $('.wysihtml5-sandbox').contents().find('body').on("keydown", function(event) {          
-              var numLoops = _.size($(this).children());                        
-              var keyCode = event.keyCode;
-            
-              if (keyCode == 9){
-                event.preventDefault(); 
-                var foundText = false;
-
-                for (var i = 0; i < numLoops; i++) {  
-                  if (foundText) { break; }
-                                               
-                  var content = $(this).children()[i];           
-                  var sentence = content.innerHTML;                
-                  var _match;
-                  var reg = new RegExp(/\{{(.*?)\}}/);
-                                
-                  var allNodes = content.childNodes.length;
-                  var thisNode;
-                
-                  if (match = reg.exec(sentence)) { _match = match; }               
-                
-                  for (var j = 0; j < allNodes; j++) {
-                    if (_match) {
-                      thisNode = content.childNodes[j];
-                      var range = document.createRange();
-                      debugger
-                      range.setStart(thisNode, _match.index);
-                      range.setEnd(thisNode, _match.index + _match[0].length);
-                
-                      var selection = document.getSelection();
-                      selection.removeAllRanges();
-                      selection.addRange(range);  
-                      foundText = true;  
-                      break;              
-                    }                 
-                  }                                
-                }                         
-              }      
-           });                               
+          "focus": function () {
+            $('.wysihtml5-sandbox').contents().find('body').off("keydown");
+            $('.wysihtml5-sandbox').contents().find('body').on("keydown", that.handleTab);
           }
         } 
       }); 
     });
+  },
+  
+  handleTab: function(event) {
+    // Tab key
+    var keyCode = event.keyCode;
+    if (keyCode != 9) {
+      return;
+    }
+    event.preventDefault();
+    
+    var children = $(this).children();
+    var numChildren = _.size(children);
+    var foundText = false;
+
+    // Iterate over elements looking for a match {{.*}}
+    var reg = new RegExp(/(\{\{.*?\}\})/);
+    var i;
+    for (i = 0; i < numChildren; i++) {  
+      var child = children[i];
+      // ISSUE: innerHTML returns <br> tags but issue..
+      // innerText does not work with nested tags (i.e. <ul>, <li>)
+      var sentence = child.innerText;
+      
+      var match = reg.exec(sentence);
+      if (!match) {
+        continue;
+      }
+      
+      // Find parent node that contains match
+      
+      var nodeWithMatch = $(child).find(":contains(" + match[0] + ")")[0];
+      
+      if (!nodeWithMatch) {
+        nodeWithMatch = child;
+      }
+
+      // Find text node that contains match
+      var nodeChildren = nodeWithMatch.childNodes;
+      var nodeToSelect;
+      
+      _(nodeChildren).forEach(function (node) {          
+        if (node.nodeType === 3 && (node.nodeValue.search("{{") !== -1)) {
+          return nodeToSelect = node;
+        } else {
+          
+          _(node.childNodes).forEach(function (innerNode) {            
+            if (innerNode.nodeType === 3 && (innerNode.nodeValue.search("{{") !== -1)) {
+              return nodeToSelect = innerNode;
+            }
+          })
+        }
+        //node.nodeValue is not a string
+        //removing this would work until it reaches oen with subnodes
+      })
+
+      var range = document.createRange();
+      range.setStart(nodeToSelect, match.index);
+      range.setEnd(nodeToSelect, match.index + match[0].length);
+
+      var selection = document.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);  
+      break;
+      // var numNodes = child.childNodes.length;
+//       var j;
+//       for (j = 0; j < numNodes; j++) {
+//         var thisNode = child.childNodes[j];
+//         var range = document.createRange();
+//         range.setStart(thisNode, match.index);
+//         range.setEnd(thisNode, match.index + match[0].length);
+//   
+//         var selection = document.getSelection();
+//         selection.removeAllRanges();
+//         selection.addRange(range);  
+//         return;
+//       }                                
+    }                              
   },
   
   addButtonLoading: function() {

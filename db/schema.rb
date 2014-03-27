@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321165402) do
+ActiveRecord::Schema.define(version: 20140326215512) do
 
   create_table "atemplates", force: true do |t|
     t.string   "title",                    null: false
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(version: 20140321165402) do
   end
 
   add_index "themes", ["recipient_email"], name: "index_themes_on_recipient_email"
+
+  create_table "todos", force: true do |t|
+    t.string   "task",       null: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

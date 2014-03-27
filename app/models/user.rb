@@ -26,5 +26,6 @@ class User < ActiveRecord::Base
          
   has_many :atemplates
   has_many :authorizations, dependent: :destroy
+  has_many :todos, dependent: :destroy
    
 end

@@ -1,4 +1,9 @@
 window.Alistpress.Views.DashboardHome = Backbone.View.extend({
+  // initialize: function (opts) {
+  //   this.toDoListView = new ToDoListView({
+  //     collection: opts.toDos;
+  //   })
+  // },
   
   template: JST['home/home'],
   
