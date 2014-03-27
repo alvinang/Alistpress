@@ -6,6 +6,8 @@ Alistpress provides a platform for users to create and store email templates. It
 * Ruby 2.1.1
 * Postgresql (hosted on Heroku)
 
+Check it out! [Let's go to Alistpress :)](http://www.alistpress.co/)
+
 ## Information
 ### Bug Reports
 

@@ -7,7 +7,7 @@
     <a href="#/atemplates" class='home-box'>
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3><%= _.size(atemplates.models) %></h3>
+          <h3><%= atemplates.length  %></h3>
           <p>My Templates</p>
         </div>
         <div class="icon">
@@ -24,7 +24,7 @@
     <a href="#/themes" class="home-box">
       <div class="small-box bg-yellow">
         <div class="inner">
-          <h3><%= _.size(Alistpress.themes.models) - sentThemes %></h3>
+          <h3><%= Alistpress.themes.length - sentThemes %></h3>
           <p>Work-in-Progress Templates</p>
         </div>
         <div class="icon">
@@ -97,6 +97,43 @@
     </div>
     <div class="box-footer clearfix">
       <button class="pull-right btn btn-default" id="sendEmail" data-loading-text="Sending...">Send <i class="fa fa-arrow-circle-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<section class="col-lg-6 connectedSortable">
+  <div class="box box-primary">
+    <div class="box-header" style="cursor: move;">
+      <i class="ion ion-clipboard"></i>
+      <h3 class="box-title">To Do List</h3>
+    </div>
+    <div class="box-body">
+      <ul class="todo-list">
+        <% var color = ['danger', 'info', 'warning', 'success', 'primary'] %>
+        <% todos.forEach(function(todo){ %>
+        <li>
+          <span class="handle">
+            <i class="fa fa-ellipsis-v"></i>
+            <i class="fa fa-ellipsis-v"></i>  
+          </span>
+          <input type="checkbox" value="" name=""/>                                            
+          <span class="text"><%= todo.escape('task') %></span>
+          <small class="label label-<%= color[Math.floor(Math.random()*5)] %>"><i class="fa fa-clock-o"></i> <%= jQuery.timeago(todo.escape('created_at')) %></small>
+          <div class="tools">
+            <i class="fa fa-edit"></i>
+            <i class="fa fa-trash-o"></i>
+          </div>
+        </li>          
+        <% }) %>                  
+      </ul>
+    </div>
+    <div class="box-footer clearfix no-border">
+      <form id="todo-items">
+        <div class="form-group col-lg-9">
+          <input type="text" class="form-control" name="todo[task]" placeholder="Subject" style="border-radius:0;">
+        </div>
+        <button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>        
+      </form>
     </div>
   </div>
 </section>

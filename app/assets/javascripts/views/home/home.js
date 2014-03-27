@@ -5,10 +5,15 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
   //   })
   // },
   
+  intialize: function () {
+    this.listenTo(Alistpress.todos, 'change add remove sync', this.render);
+  },
+  
   template: JST['home/home'],
   
   events: {
-    "click #sendEmail": "sendEmail"
+    "click #sendEmail"    : "sendEmail",
+    "submit #todo-items": "addTodo" 
   },
   
   addToolbar: function(){
@@ -51,10 +56,28 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
      });
   },
   
+  addTodo: function(event) {
+    event.preventDefault();
+    var that = this;
+    var params = $(event.currentTarget).serializeJSON().todo;
+    params.user_id = Alistpress.current_user_id;
+    params.position = Alistpress.todos.length;
+    params.completed = new Boolean(false);
+    var newTodo = new Alistpress.Models.Todo(params);
+    
+    newTodo.save({}, {
+      success: function() {
+        Alistpress.todos.add(newTodo);
+        that.render();
+      }
+    });    
+  },
+  
   render: function() {
     var renderedContent = this.template({
-      atemplates: this.collection,
-      sentThemes: Alistpress.themes.countSent()
+      atemplates: Alistpress.atemplates,
+      sentThemes: Alistpress.themes.countSent(),
+      todos: Alistpress.todos    
     });    
     
     this.$el.html(renderedContent);

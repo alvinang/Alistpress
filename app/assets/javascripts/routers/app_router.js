@@ -17,11 +17,11 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
     "themes/:id/edit"     : "editTheme"   
   },
   
-  home: function() {
+  home: function() {  
     var homeDashboard = new Alistpress.Views.DashboardHome({
-      collection: Alistpress.atemplates
+      collection: Alistpress.atemplates    
     });
-    
+
     this._swapView(homeDashboard);
   },
   // Todo

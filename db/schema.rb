@@ -52,7 +52,9 @@ ActiveRecord::Schema.define(version: 20140326215512) do
   add_index "themes", ["recipient_email"], name: "index_themes_on_recipient_email"
 
   create_table "todos", force: true do |t|
-    t.string   "task",       null: false
+    t.string   "task",                       null: false
+    t.boolean  "completed",  default: false, null: false
+    t.integer  "position"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

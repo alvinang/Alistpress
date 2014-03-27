@@ -12,6 +12,7 @@
 //= require jquery_ujs
 //= require jquery.serializeJSON
 //= require jquery.ui.sortable
+//= require jquery.timeago
 //= require bootstrap
 //= require bootstrap-wysihtml5/b3
 //= require underscore
@@ -23,3 +24,9 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
+
+jQuery(document).ready(function() {
+  $.timeago.settings.strings.suffixAgo = "";
+  $.timeago.settings.strings.minutes = "%d mins";
+  jQuery("abbr.timeago").timeago();
+});
