@@ -1,6 +1,6 @@
 class Api::AtemplatesController < ApplicationController
   before_action :authenticate_user!
-  
+    
   def create
     @atemplate = Atemplate.new(template_params)
 

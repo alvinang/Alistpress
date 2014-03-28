@@ -5,6 +5,7 @@ Alistpress::Application.routes.draw do
   end  
   
   root to: 'home#index'
+  match '/guest', via: [:get, :post], to: 'home#guest'
   
   devise_for :users, 
               path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'new' },  

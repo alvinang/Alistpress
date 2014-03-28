@@ -1,4 +1,4 @@
-module ApplicationHelper
+module ApplicationHelper  
   
   def form_token
     "<input type=\"hidden\"
