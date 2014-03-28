@@ -9,6 +9,7 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
   },
   
   addTextEditorTitle: function() {
+    var that = this;
     this.$el.find('#wysihtml5-title').each(function(i, elem) {
       $(elem).wysihtml5({
       	"font-styles": false,
@@ -17,7 +18,13 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
       	"html": false, 
       	"link": false,
       	"image": false,
-      	"color": false
+      	"color": false, 
+        "events": {
+          "focus": function() {
+            $('.wysihtml5-sandbox').contents().find('body').off("keydown");
+            $('.wysihtml5-sandbox').contents().find('body').on("keydown", that.selectAll);
+          }
+        }
       }); 
     });
   },
@@ -41,6 +48,25 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
         } 
       }); 
     });
+  },
+  
+  selectAll: function(event) {
+    var keyCode = event.keyCode;
+    if (keyCode != 9) {
+      return;
+    }
+    
+    event.preventDefault();
+    var nodeToSelect = this.parentElement.childNodes[1];
+    var range = document.createRange();
+    debugger
+    range.setStart(nodeToSelect, 0);
+    range.setEnd(nodeToSelect, this.innerText.length - 1);
+
+    var selection = document.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);  
+    
   },
   
   handleTab: function(event) {

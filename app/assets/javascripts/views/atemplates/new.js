@@ -7,7 +7,7 @@ window.Alistpress.Views.AtemplateNew = Backbone.View.extend({
   },  
   
   addTextEditor: function() {
-    $('#wysihtml5').each(function(i, elem) {
+    this.$el.find('#wysihtml5').each(function(i, elem) {
       $(elem).wysihtml5({
       	"font-styles": true,
       	"emphasis": true,
@@ -25,7 +25,7 @@ window.Alistpress.Views.AtemplateNew = Backbone.View.extend({
       atemplate: this.model
     });
     
-    this.$el.html(textEditor);
+    this.addtextEditor;
     this.$el.html(renderedContent);
     return this;
   },
