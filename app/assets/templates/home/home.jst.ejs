@@ -108,17 +108,17 @@
       <ul class="todo-list">
         <% var color = ['danger', 'info', 'warning', 'success', 'primary'] %>
         <% todos.forEach(function(todo){ %>
-        <li>
+        <li class="todo-task">
           <span class="handle">
             <i class="fa fa-ellipsis-v"></i>
             <i class="fa fa-ellipsis-v"></i>  
           </span>
-          <input type="checkbox" value="" name=""/>                                            
+          <input type="checkbox" class="todo-task-checkbox" data-todo-id="<%= todo.escape('id') %>">                                            
           <span class="text"><%= todo.escape('task') %></span>
           <small class="label label-<%= color[Math.floor(Math.random()*5)] %>"><i class="fa fa-clock-o"></i> <%= jQuery.timeago(todo.escape('created_at')) %></small>
           <div class="tools">
             <i class="fa fa-edit"></i>
-            <i class="fa fa-trash-o"></i>
+            <i class="fa fa-trash-o todo-task-trash-icon" data-todo-id="<%= todo.escape('id') %>"></i>
           </div>
         </li>          
         <% }) %>                  

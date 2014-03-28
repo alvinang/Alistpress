@@ -164,7 +164,7 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
       },
       error: function(){
         // need to set sent to false again..
-        alert("didn't send or save.....");
+        alertify.error("didn't send or save.....");
       }
     });
   }

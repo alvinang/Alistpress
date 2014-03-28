@@ -30,7 +30,7 @@ window.Alistpress.Views.ThemesIndex = Backbone.View.extend({
         Backbone.history.navigate("#/themes", { trigger: true });            
       },
       error: function() {
-        alert('Fail to delete');
+        alertify.error('Fail to delete, please contact admin');
       }
     });
   }

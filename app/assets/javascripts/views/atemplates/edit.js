@@ -59,7 +59,7 @@ window.Alistpress.Views.AtemplateEdit = Backbone.View.extend({
         Backbone.history.navigate("#/atemplates", { trigger: true });        
       }, 
       error: function() {
-        alert("Delete unsuccessful, please contact admin");
+        alertify.error("Delete unsuccessful, please contact admin");
       }
     });    
   }  

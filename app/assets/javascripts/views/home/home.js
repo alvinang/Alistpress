@@ -12,9 +12,11 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
   template: JST['home/home'],
   
   events: {
-    "click #sendEmail"    : "sendEmail",
-    "submit #todo-items"  : "addTodo" ,
-    "click .premium-store": "modalComingSoon"
+    "click #sendEmail"            : "sendEmail",
+    "submit #todo-items"          : "addTodo" ,
+    "click .premium-store"        : "modalComingSoon",
+    "change .todo-task-checkbox"  : "removeTaskCheck",
+    "click .todo-task-trash-icon" : "removeTaskTrash"   
   },
   
   addToolbar: function(){
@@ -79,6 +81,33 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
     });    
   },
   
+  removeTaskCheck: function(event) {
+    event.preventDefault();
+    
+    if ($(event.currentTarget).is(':checked')) {
+      this._removeTask(event, this);
+    }    
+  },
+  
+  removeTaskTrash: function(event) {
+    event.preventDefault();    
+    this._removeTask(event, this);    
+  },
+  
+  _removeTask: function(event, that) { 
+    var taskId = $(event.currentTarget).data('todo-id');
+    var todoModel = Alistpress.todos.get(taskId);
+       
+    todoModel.destroy({
+      success: function() {
+        that.render();
+      },
+      error: function() {
+        alertify.error("Todo Error - please contact admin");  
+      }
+    })
+  },
+  
   render: function() {
     var renderedContent = this.template({
       atemplates: Alistpress.atemplates,
@@ -120,7 +149,7 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
       },
       error: function(){
         // need to set sent to false again..
-        alert("didn't send from home page");
+        alertify.error("didn't send from home page");
       }
     });
   }

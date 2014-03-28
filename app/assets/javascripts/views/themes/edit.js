@@ -135,7 +135,7 @@ window.Alistpress.Views.ThemeEdit = Backbone.View.extend({
         Backbone.history.navigate("/themes", { trigger: true });        
       },
       error: function(){
-        alert("didn't save.....");
+        alertify.error("Email was not save, please contact admin");
       }
     });
   }

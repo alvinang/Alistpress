@@ -64,6 +64,20 @@ template8 = Atemplate.create(title: "{{[Sample] Unsatisfied Customer}}",
   user_id: 1
 )
 
+template9 = Atemplate.create(title: "{{Refund - Due to Double Charge}}", 
+  content: "<div>Dear {{Sir/Madam}},<br><br></div>\r\n\r\n<div>Thank you for choosing {{company name as your vehicle provider}}. We strive to provide the best customer service to our users.<br><br></div>\r\n\r\n<div>I noticed that your credit card was charged twice. I went ahead and processed the refund to your credit card. It will be back in your card within the next few days.<br><br></div>\r\n\r\n<div>If you have any questions, feel free to contact us {{via this email}} and we will get back to you as soon as possible. Have a wonderful day.<br><br></div>\r\n\r\n<div>Warmest Regards,</div>\r\n<div>{{Your Name}}</div>\r\n<div>{{Customer Support Specialist}}</div>\r\n<div>{{Company Name}}</div>", 
+  category: "Customer Support", 
+  description: "How to refund overcharge to your customer & make them feel great!", 
+  user_id: 1
+)
+
+template10 = Atemplate.create(title: "{{[Company Name] Created Account without a Purchase}}", 
+  content: "<div>Dear {{Sir/Madam}},<br><br></div>\r\n\r\n<div>Thank you for choosing {{company name as your vehicle provider}}. We strive to provide the best customer service to our users.<br><br></div>\r\n\r\n<div>I noticed you created an account on {{(company name) but did not purchase a report}}. May I be of any assistance to {{ease your process of purchasing a vehicle?}}<br><br></div>\r\n\r\n<div>If you have any questions, feel free to contact us via this email and we will get back to you as soon as possible. Have a wonderful day.<br><br></div>\r\n\r\n<div>Warmest Regards,</div>\r\n<div>{{Your Name}}</div>\r\n<div>{{Customer Support Specialist}}</div>\r\n<div>{{Company Name}}</div>", 
+  category: "Customer Support", 
+  description: "Connecting with non-purchase opt-in customers immediately", 
+  user_id: 1
+)
+
 task = Todo.create(task: "Check Stripe for Customer Charges", 
   completed: false, 
   position: 0, 
