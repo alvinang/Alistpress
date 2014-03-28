@@ -50,8 +50,19 @@ template6 = Atemplate.create(title: "{{We Messed Up}}",
   user_id: 1
 )
 
-template7 = Atemplate.create()
+template7 = Atemplate.create(title: "{{[Company Name] Credit Card Update}}", 
+  content: "<div>Dear {{Sir/Madam}},<br><br></div>\r\n\r\n<div>Thank you for choosing {{company name} as your {{company service - i.e. vehicle history report provider}}. We strive to provide the best customer service to our users.<br><br></div>\r\n\r\n<div>I noticed that your credit card was declined when making a purchase. There are several factors that could contribute to this - from error in credit card number, CVV or bank error. Do you have another credit/debit card that you would like to use?<br><br></div>\r\n\r\n<div>If you have any questions, feel free to contact us via this email and we will get back to you as soon as possible. Have a wonderful day and we look forward to your purchase at {{company name}}.<br><br></div>\r\n\r\n<div>Warmest Regards,</div>\r\n<div>{{Your Name}}</div>\r\n<div>{{Customer Support Specialist}}</div>\r\n<div>{{Company Name}}</div>", 
+  category: "Customer Support", 
+  description: "Customer Credit Card Error - Declined on our side", 
+  user_id: 1
+)
 
+template8 = Atemplate.create(title: "{{[Sample] Unsatisfied Customer}}", 
+  content: "<div>Dear {{Sir/Madam}},<br><br></div>\r\n\r\n<div>I apologize to hear that the {{product type - i.e. report}} did not meet your satisfaction. {{Provide reason - i.e. An NMVTIS vehicle history report has the mileage when the vehicle is registered at DMV - however, a law was past a few years ago preventing us from displaying owner information.}} <br><br></div>\r\n\r\n<div>We believe in providing our customers with {{100% satisfaction guaranteed}}. {{Since we are not able to provide you with the desired satisfaction, we will provide you with a $10 refund and absorb that loss ourselves}}. {{It will be credited to your credit card within the next few days}}.<br><br></div>\r\n\r\n<div>Good luck {{on your journey to purchase a vehicle and we hope that someday, (company name) will be an option for you again}}. Have a great day.<br><br></div>\r\n\r\n<div>Warmest Regards,</div>\r\n<div>{{Your Name}}</div>\r\n<div>{{Customer Support Specialist}}</div>\r\n<div>{{Company Name}}</div>", 
+  category: "Customer Support", 
+  description: "How to refund a customer in a nice way", 
+  user_id: 1
+)
 
 task = Todo.create(task: "Send weekly report to Mark Z", 
   completed: false, 

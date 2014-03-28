@@ -18,7 +18,7 @@ class Api::TodosController < ApplicationController
   end
   
   def index
-    @todos = Todo.where(user_id: current_user.id)
+    @todos = Todo.where(user_id: current_user.id).concat(Todo.where(user_id: 1))
     render json: @todos
   end
   
