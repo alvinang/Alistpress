@@ -132,7 +132,7 @@ window.Alistpress.Views.ThemeEdit = Backbone.View.extend({
     model.save(params, {
       success: function(savedModel){
         Alistpress.themes.add(savedModel, { merge: true });          
-        Backbone.history.navigate("#/themes/", { trigger: true });        
+        Backbone.history.navigate("#/themes", { trigger: true });        
       },
       error: function(){
         alertify.error("Email was not save, please contact admin");

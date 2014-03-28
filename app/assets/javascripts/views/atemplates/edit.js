@@ -56,7 +56,7 @@ window.Alistpress.Views.AtemplateEdit = Backbone.View.extend({
     
     this.model.destroy({
       success: function() {
-        Backbone.history.navigate("#/atemplates/", { trigger: true });        
+        Backbone.history.navigate("#/atemplates", { trigger: true });        
       }, 
       error: function() {
         alertify.error("Delete unsuccessful, please contact admin");

@@ -139,7 +139,7 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
     template.save({}, {
       success: function(){
         Alistpress.themes.add(template);             
-        Backbone.history.navigate("#/", { trigger: true });  
+        Backbone.history.navigate("", { trigger: true });  
         that._modalPopup("Email sent!");
       },
       error: function(){

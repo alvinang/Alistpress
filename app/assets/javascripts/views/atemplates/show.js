@@ -159,8 +159,9 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
     var template = new Alistpress.Models.Theme(params);  
     template.save({}, {
       success: function(){
-        Alistpress.themes.add(template);             
-        Backbone.history.navigate("#/atemplates/", { trigger: true });        
+        Alistpress.themes.add(template);        
+        debugger     
+        Backbone.history.navigate("#/atemplates", { trigger: true });        
       },
       error: function(){
         // need to set sent to false again..

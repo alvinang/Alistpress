@@ -55,7 +55,7 @@ window.Alistpress.Views.AtemplateNew = Backbone.View.extend({
     template.save({}, {
       success: function() {
         Alistpress.atemplates.add(template);
-        Backbone.history.navigate("#/atemplates/", { trigger: true });
+        Backbone.history.navigate("#/atemplates", { trigger: true });
       },
       error: function() {
         alertify.error("template not save, please contact admin")
