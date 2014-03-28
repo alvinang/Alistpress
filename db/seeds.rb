@@ -108,7 +108,7 @@ emailSaved1 = Theme.create(recipient_email: "timferris@4hourworkweek.com",
 emailSaved2 = Theme.create(recipient_email: "steve@apple.com", 
   sender_email: 'alvin@alistpress.co', 
   title: "Your work inspired so many of us and yet ...", 
-  content: "<div><b>I did not have the time to personally thank you..<br><br></b></div><div>Hi Steve,<br><br></div><div>I watched your Stanford graduation speech one a week to keep me motivated - and your advice to "stay hungry, stay foolish" has been my motto in life every since I saw your speech for the very first time.<br><br></div><div>If I have the opportunity to have a meal with anyone at all, it would be you. The roadblocks that you've had when starting Apple is intense, yet you were tenacious enough to stick with it and pull through. Your drive is one that many wish to emulate.<br><br></div><div>I really appreciate what you've done and thank you for words of wisdom.<br><br></div><div>Sincerely,</div><div>Alvin</div>", 
+  content: "<div><b>I did not have the time to personally thank you..<br><br></b></div><div>Hi Steve,<br><br></div><div>I watched your Stanford graduation speech one a week to keep me motivated - and your advice to 'stay hungry, stay foolish' has been my motto in life every since I saw your speech for the very first time.<br><br></div><div>If I have the opportunity to have a meal with anyone at all, it would be you. The roadblocks that you've had when starting Apple is intense, yet you were tenacious enough to stick with it and pull through. Your drive is one that many wish to emulate.<br><br></div><div>I really appreciate what you've done and thank you for words of wisdom.<br><br></div><div>Sincerely,</div><div>Alvin</div>", 
   template_id: nil, 
   sent: false, 
   user_id: 1
