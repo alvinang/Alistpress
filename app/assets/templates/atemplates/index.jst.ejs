@@ -24,7 +24,7 @@
                   <h3 class="box-title"><%= atemplate.escape('description') %></h3>
                 </div>
                 <div class="box-body">
-                  <p><%= atemplate.escape('title') %></p>
+                  <p><%= atemplate.get('title').match(/\{\{(.*?)\}\}/)[1] %></p>
                 </div>
                 <div class="box-footer">
                     <a href="#/atemplates/<%= atemplate.escape('id') %>/edit">Edit</a>

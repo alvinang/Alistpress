@@ -30,10 +30,10 @@ window.Alistpress.Views.AtemplatesIndex = Backbone.View.extend({
     return result;
   },
 
-  render: function() {
+  render: function() {    
     var renderedContent = this.template({
       atemplates: this.collection,
-      categories: this._getCategories()    
+      categories: this._getCategories().sort()    
     });
     
     this.$el.html(renderedContent);

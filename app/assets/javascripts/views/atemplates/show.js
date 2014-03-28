@@ -19,12 +19,6 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
       	"link": false,
       	"image": false,
       	"color": false, 
-        "events": {
-          "focus": function() {
-            $('.wysihtml5-sandbox').contents().find('body').off("keydown");
-            $('.wysihtml5-sandbox').contents().find('body').on("keydown", that.selectAll);
-          }
-        }
       }); 
     });
   },
@@ -41,32 +35,13 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
       	"image": true,
       	"color": false,
         "events": {
-          "focus": function () {
+          "focus": function () {            
             $('.wysihtml5-sandbox').contents().find('body').off("keydown");
             $('.wysihtml5-sandbox').contents().find('body').on("keydown", that.handleTab);
           }
         } 
       }); 
     });
-  },
-  
-  selectAll: function(event) {
-    var keyCode = event.keyCode;
-    if (keyCode != 9) {
-      return;
-    }
-    
-    event.preventDefault();
-    var nodeToSelect = this.parentElement.childNodes[1];
-    var range = document.createRange();
-    debugger
-    range.setStart(nodeToSelect, 0);
-    range.setEnd(nodeToSelect, this.innerText.length - 1);
-
-    var selection = document.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(range);  
-    
   },
   
   handleTab: function(event) {
@@ -95,8 +70,7 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
         continue;
       }
       
-      // Find parent node that contains match
-      
+      // Find parent node that contains match      
       var nodeWithMatch = $(child).find(":contains(" + match[0] + ")")[0];
       
       if (!nodeWithMatch) {
@@ -116,11 +90,11 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
             if (innerNode.nodeType === 3 && (innerNode.nodeValue.search("{{") !== -1)) {
               return nodeToSelect = innerNode;
             }
-          })
+          });
         }
         //node.nodeValue is not a string
         //removing this would work until it reaches oen with subnodes
-      })
+      });    
 
       var range = document.createRange();
       range.setStart(nodeToSelect, match.index);

@@ -6,6 +6,20 @@ window.Alistpress.Views.AtemplateNew = Backbone.View.extend({
     "submit form": "submit"
   },  
   
+  addTextEditorTitle: function() {
+    this.$el.find('#wysihtml5-title').each(function(i, elem) {
+      $(elem).wysihtml5({
+      	"font-styles": false,
+      	"emphasis": false,
+      	"lists": false, 
+      	"html": false, 
+      	"link": false,
+      	"image": false,
+      	"color": false
+      }); 
+    });
+  },
+  
   addTextEditor: function() {
     this.$el.find('#wysihtml5').each(function(i, elem) {
       $(elem).wysihtml5({
@@ -25,8 +39,9 @@ window.Alistpress.Views.AtemplateNew = Backbone.View.extend({
       atemplate: this.model
     });
     
-    this.addtextEditor;
     this.$el.html(renderedContent);
+    this.addTextEditorTitle();
+    this.addTextEditor();
     return this;
   },
   
