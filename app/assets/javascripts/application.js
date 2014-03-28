@@ -15,6 +15,8 @@
 //= require jquery.timeago
 //= require bootstrap
 //= require bootstrap-wysihtml5/b3
+//= require alertify
+//= require bootstrap-dialog
 //= require underscore
 //= require backbone
 //= require alistpress

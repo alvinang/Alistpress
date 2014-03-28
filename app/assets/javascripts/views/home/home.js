@@ -13,7 +13,8 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
   
   events: {
     "click #sendEmail"    : "sendEmail",
-    "submit #todo-items": "addTodo" 
+    "submit #todo-items"  : "addTodo" ,
+    "click .premium-store": "modalComingSoon"
   },
   
   addToolbar: function(){
@@ -28,6 +29,11 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
       	"color": false
       }); 
     });
+  },
+  
+  modalComingSoon: function(event) {
+    event.preventDefault();
+    alertify.alert("Premium templates coming soon...");
   },
   
   sortableIndexEmail: function() {
@@ -88,6 +94,10 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
     return this;
   },
   
+  _modalPopup: function(text) {
+    alertify.success(text);
+  },
+  
   sendEmail: function(event) {
     event.preventDefault();
     var params = $('form').serializeJSON().theme;
@@ -96,6 +106,7 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
   },
   
   _sendEmail: function(params) {   
+    var that = this;
     params.sent = new Boolean(true);
     params.sender_email = Alistpress.current_user_email; 
     params.user_id = Alistpress.current_user_id;
@@ -104,7 +115,8 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
     template.save({}, {
       success: function(){
         Alistpress.themes.add(template);             
-        Backbone.history.navigate("#/", { trigger: true });        
+        Backbone.history.navigate("#/", { trigger: true });  
+        that._modalPopup("Email sent!");
       },
       error: function(){
         // need to set sent to false again..

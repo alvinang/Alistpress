@@ -10,6 +10,9 @@
  *
  *= require bootstrap_and_overrides
  *= require bootstrap-wysihtml5
+ *= require alertify.core
+ *= require alertify.default
+ *= require bootstrap-dialog
  *= require_self
  *= require_tree .
  */

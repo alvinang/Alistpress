@@ -8,7 +8,8 @@
     </div>
     <div class="box-footer">
       <i class="fa fa-envelope"></i>
-      <strong>Sent on: <%= theme.escape('updated_at') %></strong>      
+      <% var theme_date = new Date(Date.parse(theme.escape('updated_at'))) %>            
+      <strong>Sent on: <%= theme_date.toUTCString().slice(0, -4) %></strong>      
     </div>
   </div>
 </div>

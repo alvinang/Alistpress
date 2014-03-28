@@ -1,34 +1,36 @@
 <div class="saved-templates col-xs-12" style="padding-top: 45px">        
+  <a href="#/" class="btn btn-default" style="margin-bottom:15px;">Back</a>   
   <div class="box box-warning">
     <div class="box-header">
       <h3 class="box-title">Work In Progress Emails</h3>
     </div>
     <div class="box-body table-responsive no-padding">
       <table class="table table-hover">
-        <tbody><tr>
-          <th>Recipient</th>
-          <th>Title</th>
-          <th>Date Saved</th>
-          <th>Action</th>
-        </tr>
+        <tbody class="row">
+          <tr>
+            <th class="col-lg-2">Recipient</th>
+            <th class="col-lg-5">Subject</th>
+            <th class="col-lg-3">Date Saved</th>
+            <th class="col-lg-2">Action</th>
+          </tr>
         <% themes.forEach(function(theme){ %>
 
           <% if (theme.escape('sent') === 'false') { %> 
             <% var theme_date = new Date(Date.parse(theme.escape('updated_at'))) %>
             
-        <tr>
-          <td><%= theme.escape('recipient_email') %></td>
-          <td><%= theme.escape('title') %></td>
-          <td><%= theme_date.toUTCString().slice(0, -4) %></td>
-          <td>
-            <button class="index-edit-theme btn btn-default btn-xs">
-              <a href="#/themes/<%= theme.escape('id') %>/edit">
-                Edit
-              </a>
-            </button>
-            <button class="index-delete-theme btn btn-danger btn-xs" data-id="<%= theme.escape('id') %>">Delete</button>
-          </td>
-        </tr>
+          <tr>
+            <td><%= theme.escape('recipient_email') %></td>
+            <td><%= theme.escape('title') %></td>
+            <td><%= theme_date.toUTCString().slice(0, -4) %></td>
+            <td>
+              <button class="index-edit-theme btn btn-default btn-xs">
+                <a href="#/themes/<%= theme.escape('id') %>/edit">
+                  Edit
+                </a>
+              </button>
+              <button class="index-delete-theme btn btn-danger btn-xs" data-id="<%= theme.escape('id') %>">Delete</button>
+            </td>
+          </tr>
           <% } %>  
         <% }); %>        
       </tbody></table>

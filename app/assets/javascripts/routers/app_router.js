@@ -6,7 +6,6 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
   
   routes: {
     ""                    : "home",
-    "premium"             : "premium",
     "atemplates"          : "indexAtemplate",
     "atemplates/new"      : "newAtemplate",
     "atemplates/:id"      : "showAtemplate",
@@ -23,14 +22,6 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
     });
 
     this._swapView(homeDashboard);
-  },
-  // Todo
-  premium: function() {
-    var store = new Alistpress.Views.UserProfile({
-      model: Alistpress.atemplates
-    });
-    
-    this._swapView(store);
   },
   
   indexAtemplate: function() {

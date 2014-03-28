@@ -1,4 +1,5 @@
-<div class="saved-templates col-xs-12" style="padding-top: 45px">      
+<div class="saved-templates col-xs-12" style="padding-top: 45px">   
+  <a href="#/" class="btn btn-default" style="margin-bottom:15px;">Back</a>   
   <div class="box box-success">
     <div class="box-header">
       <h3 class="box-title">Sent History</h3>
@@ -8,7 +9,7 @@
         <tbody>
           <tr>
             <th>Recipient</th>
-            <th>Title</th>
+            <th>Subject</th>
             <th>Date Sent</th>
           </tr>
           <% themes.forEach(function(theme){ %>
@@ -16,8 +17,8 @@
               <% var theme_date = new Date(Date.parse(theme.escape('updated_at'))) %>            
                 <tr>
                   <td><%= theme.escape('recipient_email') %></td>
-                  <td><%= theme.escape('title') %></td>
-                  <td><%= theme_date.toUTCString().slice(0, -4)%></td>
+                  <td><a href="#/themes/<%= theme.escape('id') %>"><%= theme.escape('title') %></a></td>      
+                  <td><%= theme_date.toUTCString().slice(0, -4) %></td>
                 </tr>              
             <% } %>  
           <% }); %>        
