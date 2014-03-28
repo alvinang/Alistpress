@@ -99,7 +99,16 @@ emailSent2 = Theme.create(recipient_email: "ericries@leanstartup.com",
 emailSaved1 = Theme.create(recipient_email: "timferris@4hourworkweek.com", 
   sender_email: 'alvin@alistpress.co', 
   title: "I flew to Buenos Aires like you and encountered ...", 
-  content: "<div>Hi Eric,<br><br></div><div>The methodology that you created exist in the past - however, no one verbalized it out and created a movement like what you did. For that, I thank you.<br><br></div><div>After reading your book in combination with lean startup analytics, it was extremely helpful to me as I applied what you preached immediately. The results were phenomenal.<br><br></div><div>As I progress in my career, I hope to contribute towards your movement and learn more from in the future.<br><br></div><div>Sincerely,</div><div>Alvin</div>", 
+  content: "<div><b>a dude on the side of the street, squatting while eating &amp; reading your book!<br><br></b></div><div>Hi Tim,<br><br></div><div>Your following is crazy, I've spoken with so many people all around the world about your book and boy, we totally clicked off. More than just an informational material, your book is a way for people to connect!<br><br></div><div>Have you thought about creating a HUGE platform (larger than your current site) to allow your readers to connect in a whole new different level. We're talking about large conferences, huge networking event and tons of fun!<br><br></div><div>Let me know your thoughts and we can chat further about it!<br><br></div><div>Sincerely,</div><div>Alvin</div>", 
+  template_id: nil, 
+  sent: false, 
+  user_id: 1
+)
+
+emailSaved2 = Theme.create(recipient_email: "steve@apple.com", 
+  sender_email: 'alvin@alistpress.co', 
+  title: "Your work inspired so many of us and yet ...", 
+  content: "<div><b>I did not have the time to personally thank you..<br><br></b></div><div>Hi Steve,<br><br></div><div>I watched your Stanford graduation speech one a week to keep me motivated - and your advice to "stay hungry, stay foolish" has been my motto in life every since I saw your speech for the very first time.<br><br></div><div>If I have the opportunity to have a meal with anyone at all, it would be you. The roadblocks that you've had when starting Apple is intense, yet you were tenacious enough to stick with it and pull through. Your drive is one that many wish to emulate.<br><br></div><div>I really appreciate what you've done and thank you for words of wisdom.<br><br></div><div>Sincerely,</div><div>Alvin</div>", 
   template_id: nil, 
   sent: false, 
   user_id: 1
