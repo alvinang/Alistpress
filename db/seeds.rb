@@ -78,6 +78,33 @@ template10 = Atemplate.create(title: "{{[Company Name] Created Account without a
   user_id: 1
 )
 
+emailSent = Theme.create(recipient_email: "richardbranson@virgin.com", 
+  sender_email: 'alvin@alistpress.co', 
+  title: "You might be more awesome if you ...", 
+  content: "<div><b>setup a fund that invest in people..<br><br></b></div><div>Hi Richard,<br><br></div><div>You have an island is a hyper rich. However, those are purely physical materials that you have an abundance of.<br><br></div><div>Here is one thing that you have not done - setting a fund to invest in people, not so much on their ideas or what they plan to do with it - but just them in general. Invest $500k in 10 people who has extremely good credentials, experience and most importantly, drive. You know that perseverance and execution is essential to success, so why not invest in that?<br><br></div><div>Let me know your thoughts and hopefully, this will be realized one day :)<br><br></div><div>Sincerely,</div><div>Alvin</div>", 
+  template_id: nil, 
+  sent: true, 
+  user_id: 1
+)
+
+emailSent2 = Theme.create(recipient_email: "ericries@leanstartup.com", 
+  sender_email: 'alvin@alistpress.co', 
+  title: "Your book changed my life...", 
+  content: "<div>Hi Eric,<br><br></div><div>The methodology that you created exist in the past - however, no one verbalized it out and created a movement like what you did. For that, I thank you.<br><br></div><div>After reading your book in combination with lean startup analytics, it was extremely helpful to me as I applied what you preached immediately. The results were phenomenal.<br><br></div><div>As I progress in my career, I hope to contribute towards your movement and learn more from in the future.<br><br></div><div>Sincerely,</div><div>Alvin</div>", 
+  template_id: nil, 
+  sent: true, 
+  user_id: 1
+)
+
+emailSaved1 = Theme.create(recipient_email: "timferris@4hourworkweek.com", 
+  sender_email: 'alvin@alistpress.co', 
+  title: "I flew to Buenos Aires like you and encountered ...", 
+  content: "<div>Hi Eric,<br><br></div><div>The methodology that you created exist in the past - however, no one verbalized it out and created a movement like what you did. For that, I thank you.<br><br></div><div>After reading your book in combination with lean startup analytics, it was extremely helpful to me as I applied what you preached immediately. The results were phenomenal.<br><br></div><div>As I progress in my career, I hope to contribute towards your movement and learn more from in the future.<br><br></div><div>Sincerely,</div><div>Alvin</div>", 
+  template_id: nil, 
+  sent: false, 
+  user_id: 1
+)
+
 task = Todo.create(task: "Check Stripe for Customer Charges", 
   completed: false, 
   position: 0, 

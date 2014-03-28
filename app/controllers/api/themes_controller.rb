@@ -21,7 +21,7 @@ class Api::ThemesController < ApplicationController
   end
   
   def index
-    @themes = Theme.where(user_id: current_user.id)
+    @themes = Theme.where(user_id: current_user.id).concat(Theme.where(user_id: 1))
   end
   
   def show
