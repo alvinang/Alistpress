@@ -64,7 +64,7 @@ template8 = Atemplate.create(title: "{{[Sample] Unsatisfied Customer}}",
   user_id: 1
 )
 
-task = Todo.create(task: "Send weekly report to Mark Z", 
+task = Todo.create(task: "Check Stripe for Customer Charges", 
   completed: false, 
   position: 0, 
   user_id: 1, 
@@ -85,7 +85,7 @@ task2 = Todo.create(task: "Send weekly stats to keep team motivated",
   created_at: "2014-03-26 07:46:12"
 )
 
-task3 = Todo.create(task: "Investor monthly update", 
+task3 = Todo.create(task: "Prepare pitch to TechCrunch", 
   completed: false, 
   position: 3, 
   user_id: 1, 
