@@ -1,9 +1,4 @@
 window.Alistpress.Views.DashboardHome = Backbone.View.extend({
-  // initialize: function (opts) {
-  //   this.toDoListView = new ToDoListView({
-  //     collection: opts.toDos;
-  //   })
-  // },
   
   intialize: function () {
     this.listenTo(Alistpress.todos, 'change add remove sync', this.render);

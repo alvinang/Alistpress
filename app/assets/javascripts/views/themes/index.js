@@ -27,7 +27,7 @@ window.Alistpress.Views.ThemesIndex = Backbone.View.extend({
     
     model.destroy({
       success: function() {
-        Backbone.history.navigate("#/themes", { trigger: true });            
+        Backbone.history.navigate("#/themes/", { trigger: true });            
       },
       error: function() {
         alertify.error('Fail to delete, please contact admin');

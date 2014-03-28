@@ -75,7 +75,7 @@
 
 <section class="col-lg-6 connectedSortable">
   <div class="box box-info">
-    <div class="box-header" style="cursor: move;">
+    <div class="box-header">
       <i class="fa fa-envelope"></i>
       <h3 class="box-title">Quick Email</h3>
     </div>
@@ -100,7 +100,7 @@
 
 <section class="col-lg-6 connectedSortable">
   <div class="box box-primary">
-    <div class="box-header" style="cursor: move;">
+    <div class="box-header">
       <i class="ion ion-clipboard"></i>
       <h3 class="box-title">To Do List</h3>
     </div>
@@ -117,7 +117,7 @@
           <span class="text"><%= todo.escape('task') %></span>
           <small class="label label-<%= color[Math.floor(Math.random()*5)] %>"><i class="fa fa-clock-o"></i> <%= jQuery.timeago(todo.escape('created_at')) %></small>
           <div class="tools">
-            <i class="fa fa-edit"></i>
+            <!-- <i class="fa fa-edit"></i> -->
             <i class="fa fa-trash-o todo-task-trash-icon" data-todo-id="<%= todo.escape('id') %>"></i>
           </div>
         </li>          
