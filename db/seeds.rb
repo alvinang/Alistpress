@@ -128,27 +128,27 @@ task2 = Todo.create(task: "<------ Contact Alvin for an interview",
   created_at: "2014-03-25 07:46:12"
 )
 
-task2 = Todo.create(task: "Send weekly stats to keep team motivated", 
+task3 = Todo.create(task: "Send weekly stats to keep team motivated", 
   completed: false, 
   position: 2, 
   user_id: 1, 
   created_at: "2014-03-26 07:46:12"
 )
 
-task3 = Todo.create(task: "Prepare pitch to TechCrunch", 
+task4 = Todo.create(task: "Prepare pitch to TechCrunch", 
   completed: false, 
   position: 3, 
   user_id: 1, 
   created_at: "2014-03-27 07:46:12"
 )
 
-task4 = Todo.create(task: "Email one guest blog a week", 
+task5 = Todo.create(task: "Email one guest blog a week", 
   completed: false, 
   position: 4, 
   user_id: 1
 )
 
-task5 = Todo.create(task: "Check out Alvin's Portfolio", 
+task6 = Todo.create(task: "Check out Alvin's Portfolio", 
   completed: false, 
   position: 5, 
   user_id: 1

@@ -13,7 +13,7 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
     "themes"              : "indexTheme",
     "themes/sent"         : "sentTheme",
     "themes/:id"          : "showTheme",
-    "themes/:id/edit"     : "editTheme"   
+    "themes/:id/edit"     : "editTheme"
   },
   
   home: function() {  
@@ -22,6 +22,10 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
     });
 
     this._swapView(homeDashboard);
+  },
+  
+  redirectToHome: {
+    Backbone.history.navigate("", { trigger: true });
   },
   
   indexAtemplate: function() {
