@@ -153,7 +153,7 @@ window.Alistpress.Views.AtemplateShow = Backbone.View.extend({
   },
   
   _newTheme: function(params) {    
-    params.user_id = Alistpress.current_user_id;
+    params.user_id = Alistpress.current_user.id;
     params.template_id = this.model.id;
     
     var template = new Alistpress.Models.Theme(params);  

@@ -24,10 +24,6 @@ window.Alistpress.Routers.AppRouters = Backbone.Router.extend({
     this._swapView(homeDashboard);
   },
   
-  redirectToHome: {
-    Backbone.history.navigate("", { trigger: true });
-  },
-  
   indexAtemplate: function() {
     var indexAtemplate = new Alistpress.Views.AtemplatesIndex({
       collection: Alistpress.atemplates

@@ -63,7 +63,7 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
     event.preventDefault();
     var that = this;
     var params = $(event.currentTarget).serializeJSON().todo;
-    params.user_id = Alistpress.current_user_id;
+    params.user_id = Alistpress.current_user.id;
     params.position = Alistpress.todos.length;
     params.completed = new Boolean(false);
     var newTodo = new Alistpress.Models.Todo(params);
@@ -132,8 +132,8 @@ window.Alistpress.Views.DashboardHome = Backbone.View.extend({
   _sendEmail: function(params) {   
     var that = this;
     params.sent = new Boolean(true);
-    params.sender_email = Alistpress.current_user_email; 
-    params.user_id = Alistpress.current_user_id;
+    params.sender_email = Alistpress.current_user.email; 
+    params.user_id = Alistpress.current_user.id;
     
     var template = new Alistpress.Models.Theme(params);  
     template.save({}, {

@@ -36,7 +36,7 @@ window.Alistpress.Views.AtemplateEdit = Backbone.View.extend({
     event.preventDefault();
     
     var params = $(event.currentTarget).serializeJSON().atemplate;
-    params.user_id = Alistpress.current_user_id;
+    params.user_id = Alistpress.current_user.id;
     params.id = this.model.id;
     
     var template = new Alistpress.Models.Atemplate(params);  
