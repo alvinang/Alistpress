@@ -31,7 +31,7 @@ class Api::ThemesController < ApplicationController
   def update
     @theme = Theme.find(params[:id])
     
-    if @theme.update_attributes(theme_params)
+    if @theme.update(theme_params)
       ThemeMailer.send_email(@theme).deliver! if @theme.sent
       render json: @theme
     else

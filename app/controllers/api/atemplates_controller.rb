@@ -33,7 +33,7 @@ class Api::AtemplatesController < ApplicationController
   def update
     @atemplate = Atemplate.find(params[:id])
     
-    if @atemplate.update_attributes(template_params)
+    if @atemplate.update(template_params)
       render json: @atemplate
     else
       render json: @atemplate.errors.full_messages, status: 422

@@ -5,7 +5,7 @@ Alistpress::Application.routes.draw do
   end  
   
   root to: 'home#index'
-  match '/guest', via: [:get, :post], to: 'home#guest'
+  get '/guest', to: 'home#guest'
   
   devise_for :users, 
               path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'new' },  
@@ -13,9 +13,9 @@ Alistpress::Application.routes.draw do
               controllers: { omniauth_callbacks: 'omniauth_callbacks' }
               
   devise_scope :user do
-    match '/login'  , via: :get   , to: 'devise/sessions#new'     , as: :new_user_session
-    match '/login'  , via: :post  , to: 'devise/sessions#create'  , as: :user_session
-    match '/logout' , via: :delete, to: 'devise/sessions#destroy' , as: :destroy_user_session  
+    get '/login',     to: 'devise/sessions#new'     , as: :new_user_session
+    post '/login',    to: 'devise/sessions#create'  , as: :user_session
+    delete '/logout', to: 'devise/sessions#destroy' , as: :destroy_user_session  
   end              
   
   namespace :api, defaults: { format: :json } do 
