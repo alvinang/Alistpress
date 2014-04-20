@@ -18,12 +18,12 @@ Alistpress::Application.routes.draw do
     delete '/logout', to: 'devise/sessions#destroy' , as: :destroy_user_session  
   end              
   
-  namespace :api, defaults: { format: :json } do 
+  namespace :api, path: '/', constraints: { subdomain: 'api' }, defaults: { format: :json } do 
     with_options only: [:create, :destroy, :index, :show, :update] do |list_only|
       list_only.resources :atemplates 
       list_only.resources :themes     
       list_only.resources :todos      
-    end
+    end    
   end
 
 end

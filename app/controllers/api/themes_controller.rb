@@ -1,4 +1,4 @@
-class Api::ThemesController < ApplicationController
+class API::ThemesController < ApplicationController
   before_action :authenticate_user!
   
   def create

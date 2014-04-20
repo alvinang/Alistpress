@@ -1,4 +1,4 @@
-class Api::AtemplatesController < ApplicationController
+class API::AtemplatesController < ApplicationController
   before_action :authenticate_user!
     
   def create
